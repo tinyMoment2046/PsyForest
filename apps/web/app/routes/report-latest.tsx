@@ -29,7 +29,7 @@ export function meta({ loaderData, location }: Route.MetaArgs) {
   const lead = report?.lead?.leadParagraph ?? report?.overview?.slice(0, 150);
   const description = report && lead ? `${reportDateLabel(kind, report.key)} ${withSubject("资讯")}：${lead}` : `${REPORTS.descriptions[kind]}。`;
   return [...pageMeta({
-    title: withSubject(REPORT_NAMES[kind]),
+    title: REPORT_NAMES[kind],
     description,
     path: location.pathname,
     image: `/og/pages/${kind}.png`,
@@ -42,7 +42,7 @@ export default function ReportLatestPage() {
   const { kind, report, index, today } = useLoaderData<typeof loader>();
   return (
     <ReportLayout kind={kind} index={index} current={report?.key ?? null} today={today} outline={report ? reportOutline(report) : []}>
-      {report ? <ReportPaper report={report} index={index} /> : <EmptyState title={subjectAfter("还没有发布", REPORT_NAMES[kind])}>第一期发布后会出现在这里。</EmptyState>}
+      {report ? <ReportPaper report={report} index={index} /> : <EmptyState title={`还没有发布${REPORT_NAMES[kind]}`}>第一期发布后会出现在这里。</EmptyState>}
     </ReportLayout>
   );
 }

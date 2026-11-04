@@ -1,0 +1,68 @@
+{
+  "books": [
+    {
+      "id": "psychology-2e",
+      "title": "心理学入门 2e",
+      "subtitle": "Psychology 2e · OpenStax 简体中文版",
+      "authors": "Rose M. Spielman、William J. Jenkins、Marilyn D. Lovett",
+      "kind": "textbook",
+      "license": {
+        "name": "CC BY 4.0",
+        "url": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "source": "https://query.libretexts.org/简体中文/心理学入门_2e_(OpenStax)",
+      "sourceContent": "https://openstax.org/details/books/psychology-2e",
+      "importedAt": "2026-11-04",
+      "chapters": 16,
+      "sections": 184
+    },
+    {
+      "id": "meditations",
+      "title": "Meditations",
+      "subtitle": "EPUB 导入",
+      "authors": "Emperor of Rome Marcus Aurelius",
+      "kind": "book",
+      "license": {
+        "name": "Public domain in the USA.",
+        "url": ""
+      },
+      "source": "https://www.gutenberg.org/ebooks/2680",
+      "sourceContent": "https://www.gutenberg.org/ebooks/2680",
+      "importedAt": "2026-11-04",
+      "chapters": 17,
+      "sections": 17
+    },
+    {
+      "id": "test-alice",
+      "title": "Alice's Adventures in Wonderland",
+      "subtitle": "EPUB 导入",
+      "authors": "Lewis Carroll",
+      "kind": "book",
+      "license": {
+        "name": "Public domain in the USA.",
+        "url": ""
+      },
+      "source": "本地文件：alice.epub",
+      "sourceContent": "",
+      "importedAt": "2026-11-04",
+      "chapters": 12,
+      "sections": 12
+    },
+    {
+      "id": "test-oz",
+      "title": "The Wonderful Wizard of Oz",
+      "subtitle": "EPUB 导入",
+      "authors": "L. Frank Baum",
+      "kind": "book",
+      "license": {
+        "name": "Public domain in the USA.",
+        "url": ""
+      },
+      "source": "本地文件：oz.epub",
+      "sourceContent": "",
+      "importedAt": "2026-11-04",
+      "chapters": 26,
+      "sections": 26
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import { useLoaderData } from "react-router";
-import { SITE, subjectAfter, withSubject } from "@aihot/site";
+import { SITE, subjectAfter } from "@aihot/site";
 import type { Route } from "./+types/topics";
 import type { TopicSummary, TopicsResponse } from "@aihot/contracts/site";
 import { apiGet, cachedPage } from "../lib/api.server";
@@ -39,7 +39,7 @@ export function meta({ loaderData }: Route.MetaArgs) {
         "@type": "CollectionPage",
         "@id": `${base}/topics#collection`,
         url: `${base}/topics`,
-        name: withSubject("主题"),
+        name: "主题",
         inLanguage: SITE.locale,
         isPartOf: { "@id": `${base}/#website` },
         mainEntity: {

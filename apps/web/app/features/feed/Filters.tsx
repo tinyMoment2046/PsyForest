@@ -60,8 +60,8 @@ export function FeedBar({ base, category, channel }: { base: "/" | "/all"; categ
     <>
       <PhoneBar
         leading={
-          <Link to="/" aria-label={`${SITE.name} 首页`} className="flex h-11 items-center pl-2.5 pr-2 text-ink">
-            <Wordmark size={17} />
+          <Link to="/" aria-label={`${SITE.name} 首页`} className="flex h-11 min-w-0 items-center pl-2.5 pr-2 text-ink">
+            <Wordmark size={15} />
           </Link>
         }
         center={

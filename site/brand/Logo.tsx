@@ -2,11 +2,25 @@
 // 这里用站名排字；有自己的 Logo 时，把 Wordmark 换成你的 SVG（保持同样的参数）。
 import { SITE } from "../site.ts";
 
-export function Wordmark({ size = 24, className = "", title = SITE.name }: { size?: number; className?: string; title?: string }) {
+export function Wordmark({ size = 24, className = "", title }: { size?: number; className?: string; title?: string }) {
+  // 两行字标：第一行英文短名带圆点，第二行 @ 中文名缩进对齐在文字下面；两行都不换行，放不下就截断。
+  const name = SITE.shortName || SITE.name;
   return (
-    <span className={`inline-flex items-center font-black leading-none tracking-[-0.03em] ${className}`} style={{ fontSize: Math.round(size * 0.92) }} aria-label={title} role="img">
-      <span aria-hidden="true" className="mr-[0.3em] inline-block size-[0.42em] rounded-full bg-accent" />
-      <span aria-hidden="true">{SITE.name}</span>
+    <span
+      className={`inline-flex min-w-0 flex-col justify-center font-black leading-none tracking-[-0.03em] ${className}`}
+      style={{ fontSize: Math.round(size * 0.92) }}
+      aria-label={title ?? SITE.name}
+      role="img"
+    >
+      <span className="flex min-w-0 items-center">
+        <span aria-hidden="true" className="mr-[0.3em] inline-block size-[0.42em] shrink-0 rounded-full bg-accent" />
+        <span aria-hidden="true" className="truncate whitespace-nowrap">{name}</span>
+      </span>
+      {SITE.handle && (
+        <span aria-hidden="true" className="mt-[0.3em] truncate whitespace-nowrap pl-[0.72em] text-[0.6em] font-semibold tracking-[0.02em] text-ink-3">
+          @{SITE.handle}
+        </span>
+      )}
     </span>
   );
 }

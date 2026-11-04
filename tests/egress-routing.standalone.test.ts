@@ -56,8 +56,15 @@ test("the host list matches exact hostnames and explicit direct callers still wo
   assert.equal((await guardedFetch("https://paid.invalid/api", { route: "direct" })).text(), "api");
 });
 
-test("direct host exceptions never grant permission to fetch a private address", async () => {
-  config.allowPrivateNetworkFetch = false;
+test("a domestic host named in EGRESS_PROXY_CN_HOSTS is read through the proxy, not system DNS", async () => {
+  const before = proxyHits;
+  process.env.EGRESS_PROXY_CN_HOSTS = "domestic.cn";
+  try { await assert.rejects(guardedFetch("https://domestic.cn/feed", { timeoutMs: 1000 })); }
+  finally { delete process.env.EGRESS_PROXY_CN_HOSTS; }
+  assert.ok(proxyHits > before);
+});
+
+test("direct host exceptions never grant permission to fetch a private address", async () => {  config.allowPrivateNetworkFetch = false;
   try { await assert.rejects(guardedFetch("http://localhost/metadata"), /Blocked/); }
   finally { config.allowPrivateNetworkFetch = true; }
 });
