@@ -63,7 +63,10 @@ function Tree({
         </Link>
         <span className="flex items-center gap-2">
           <Link to="/kb/guides" className="py-1 text-[12px] text-ink-4 hover:text-ink-2">
-            读者问题
+            问题
+          </Link>
+          <Link to="/kb/cards" className="py-1 text-[12px] text-ink-4 hover:text-ink-2">
+            方法卡
           </Link>
           <Link to="/kb/concepts" className="py-1 text-[12px] text-ink-4 hover:text-ink-2">
             概念

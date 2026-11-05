@@ -29,6 +29,8 @@ export default [
   route("monthly/:key", "routes/report-detail.tsx", { id: "monthly-detail" }),
   route("kb", "routes/kb.tsx"),
   route("kb/concepts", "routes/kb.concepts.tsx"),
+  route("kb/cards", "routes/kb.cards.tsx"),
+  route("kb/cards/:slug", "routes/kb.card.tsx"),
   route("kb/guides", "routes/kb.guides.tsx"),
   route("kb/guides/:slug", "routes/kb.guide.tsx"),
   route("kb/:book", "routes/kb.book.tsx"),

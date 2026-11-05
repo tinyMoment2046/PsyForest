@@ -1,6 +1,7 @@
 import { Link } from "react-router";
 import { LIBRARY } from "../features/kb/data";
 import { GUIDES } from "../features/kb/guides";
+import { CARDS } from "../features/kb/cards";
 import { pageMeta, siteUrl } from "../lib/seo";
 import { edgeTtl } from "../lib/api.server";
 import type { Screen } from "../components/shell/screens";
@@ -93,6 +94,33 @@ export default function KbIndex() {
                   <span className="mt-0.5 block text-[11.5px] text-ink-4">
                     {g.tags[0]} · {g.readMinutes} 分钟
                   </span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-10" aria-labelledby="cards">
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
+          <h2 id="cards" className="text-[15px] font-semibold text-ink">
+            方法卡
+          </h2>
+          <Link to="/kb/cards" className="text-[12.5px] text-accent underline decoration-accent/30 underline-offset-3 hover:decoration-accent">
+            全部 {CARDS.length} 张
+          </Link>
+        </div>
+        <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
+          {CARDS.slice(0, 4).map((c) => (
+            <li key={c.slug}>
+              <Link
+                to={`/kb/cards/${c.slug}`}
+                className="group flex h-full items-start gap-3 rounded-card border border-line bg-surface px-4 py-3.5 transition-colors hover:border-line-strong hover:bg-bg-sunk"
+              >
+                <span className="mt-[7px] size-1.5 shrink-0 rounded-full bg-ink-4" />
+                <span className="min-w-0">
+                  <span className="block text-[14.5px] font-medium leading-6 text-ink">{c.title}</span>
+                  <span className="mt-0.5 block text-[11.5px] text-ink-4">{c.tags[0]} · 有出处的方法</span>
                 </span>
               </Link>
             </li>
