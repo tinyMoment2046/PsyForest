@@ -1,0 +1,1144 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>《心理学入门 2e》· 压力如何拖垮身体，又怎样恢复</title>
+  <style>
+    :root {
+      --ink: #171411;
+      --muted: #6d6258;
+      --paper: #f8f2e7;
+      --paper-deep: #ece1cf;
+      --line: #d8c8af;
+      --red: #b9422f;
+      --blue: #245f73;
+      --green: #4d6f48;
+      --gold: #c2872d;
+      --white: #fffaf0;
+      --shadow: 0 18px 50px rgba(55, 38, 19, .14);
+
+      /* —— 主题化 token（默认 = 暖纸典藏；主题文件覆盖这些即可换肤，不碰布局）—— */
+      --font-body: "Songti SC", "Noto Serif CJK SC", Georgia, serif;
+      --font-display: "PingFang SC", "Microsoft YaHei", sans-serif;
+      --bg: radial-gradient(circle at 22% 12%, rgba(194, 135, 45, .18), transparent 28rem),
+            linear-gradient(135deg, #fbf6ec 0%, #efe1ca 100%);
+      --surface: rgba(255, 250, 240, .62);
+      --surface-strong: rgba(255, 250, 240, .72);
+      --bar-bg: rgba(248, 242, 231, .95);
+      --ink-soft: #3d332b;
+      --ink-soft-2: #44392f;
+      --tint-accent: rgba(194, 135, 45, .12);
+      --tint-accent-strong: rgba(194, 135, 45, .15);
+    }
+
+    /* —— 选中主题的变量覆盖 + 组件微调（Agent 注入对应 templates/themes/*.css）—— */
+    /* ============================================================
+   暖纸典藏（warm-paper · 默认主题）
+   与 base.html :root 默认值完全一致——此文件是其显式拷贝，
+   保证菜单 4 项对称、可读、可独立覆盖。
+   ============================================================ */
+:root {
+  --ink: #171411;
+  --muted: #6d6258;
+  --paper: #f8f2e7;
+  --paper-deep: #ece1cf;
+  --line: #d8c8af;
+  --red: #b9422f;
+  --blue: #245f73;
+  --green: #4d6f48;
+  --gold: #c2872d;
+  --white: #fffaf0;
+  --shadow: 0 18px 50px rgba(55, 38, 19, .14);
+
+  --font-body: "Songti SC", "Noto Serif CJK SC", Georgia, serif;
+  --font-display: "PingFang SC", "Microsoft YaHei", sans-serif;
+  --bg: radial-gradient(circle at 22% 12%, rgba(194, 135, 45, .18), transparent 28rem),
+        linear-gradient(135deg, #fbf6ec 0%, #efe1ca 100%);
+  --surface: rgba(255, 250, 240, .62);
+  --surface-strong: rgba(255, 250, 240, .72);
+  --bar-bg: rgba(248, 242, 231, .95);
+  --ink-soft: #3d332b;
+  --ink-soft-2: #44392f;
+  --tint-accent: rgba(194, 135, 45, .12);
+  --tint-accent-strong: rgba(194, 135, 45, .15);
+}
+
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: var(--font-body);
+    }
+
+    button { font: inherit; color: inherit; }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 32px 0 44px;
+      isolation: isolate;
+    }
+
+    /* ——— Hero ——— */
+    .hero {
+      min-height: 52vh;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 32px;
+      align-items: end;
+      padding: 48px 0 30px;
+    }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      color: var(--red);
+      font: 700 14px/1.3 var(--font-display);
+    }
+
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(44px, 7vw, 86px);
+      line-height: .98;
+      font-weight: 900;
+    }
+
+    .hero .lede {
+      margin: 22px 0 0;
+      max-width: 720px;
+      color: var(--ink-soft);
+      font-size: 21px;
+      line-height: 1.7;
+    }
+
+    .thesis {
+      border-left: 7px solid var(--red);
+      background: var(--surface-strong);
+      padding: 22px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .thesis strong {
+      display: block;
+      margin-bottom: 12px;
+      font: 800 18px/1.2 var(--font-display);
+    }
+
+    .thesis span {
+      display: block;
+      color: var(--ink-soft-2);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    /* ——— Tabs ——— */
+    .tabs {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: grid;
+      gap: 8px;
+      padding: 10px;
+      margin: 12px 0 28px;
+      border: 1px solid var(--line);
+      background: var(--bar-bg);
+    }
+
+    .tab {
+      min-height: 52px;
+      border: 0;
+      border-radius: 4px;
+      background: transparent;
+      cursor: pointer;
+      font: 800 16px/1.2 var(--font-display);
+      pointer-events: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .tab[aria-selected="true"] {
+      color: var(--white);
+      background: var(--ink);
+    }
+
+    /* ——— Panels ——— */
+    .panel {
+      display: none;
+      animation: rise .36s ease both;
+    }
+
+    .panel.active { display: block; }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-title {
+      margin: 0 0 18px;
+      font: 900 30px/1.15 var(--font-display);
+    }
+
+    .section-lead {
+      margin: 0 0 24px;
+      color: var(--ink-soft);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    /* ——— Grid & Note cards ——— */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .note {
+      min-height: 220px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .note h3 {
+      margin: 0 0 12px;
+      font: 900 21px/1.2 var(--font-display);
+    }
+
+    .note p {
+      margin: 0;
+      color: var(--ink-soft-2);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .note .when {
+      margin-top: 10px;
+      color: var(--muted);
+      font: 14px/1.5 var(--font-display);
+    }
+
+    /* ——— Chain ——— */
+    .chain {
+      display: grid;
+      gap: 8px;
+      margin: 24px 0 8px;
+    }
+
+    .chain button {
+      min-height: 88px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      cursor: pointer;
+      text-align: left;
+      font: 800 15px/1.35 var(--font-display);
+    }
+
+    .chain button.active {
+      color: var(--white);
+      background: var(--blue);
+      border-color: var(--blue);
+    }
+
+    .explain {
+      min-height: 118px;
+      margin-top: 10px;
+      padding: 22px;
+      color: var(--ink-soft-2);
+      border: 1px solid var(--line);
+      background: var(--surface-strong);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    /* ——— Split / Selector ——— */
+    .split {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .city-buttons {
+      display: grid;
+      gap: 10px;
+    }
+
+    .city-buttons button {
+      min-height: 58px;
+      padding: 0 18px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      cursor: pointer;
+      text-align: left;
+      font: 800 17px/1.2 var(--font-display);
+    }
+
+    .city-buttons button.active {
+      color: var(--white);
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .result {
+      padding: 28px;
+      min-height: 300px;
+      border: 1px solid var(--line);
+      background: var(--surface-strong);
+      box-shadow: var(--shadow);
+    }
+
+    .result .label {
+      color: var(--red);
+      font: 800 14px/1.2 var(--font-display);
+    }
+
+    .result h3 {
+      margin: 10px 0 12px;
+      font: 900 28px/1.2 var(--font-display);
+    }
+
+    .result p {
+      margin: 0 0 12px;
+      color: var(--ink-soft);
+      font-size: 18px;
+      line-height: 1.75;
+    }
+
+    /* ——— Questions ——— */
+    .questions {
+      display: grid;
+      gap: 12px;
+      counter-reset: q;
+    }
+
+    .question {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 18px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .question::before {
+      counter-increment: q;
+      content: counter(q);
+      display: grid;
+      place-items: center;
+      width: 46px;
+      height: 46px;
+      color: var(--white);
+      background: var(--gold);
+      font: 900 22px/1 var(--font-display);
+    }
+
+    .question h3 {
+      margin: 0 0 4px;
+      font: 900 18px/1.25 var(--font-display);
+    }
+
+    .question p {
+      margin: 0;
+      color: var(--muted);
+      font: 15px/1.55 var(--font-display);
+    }
+
+    /* ——— Matrix ——— */
+    table.matrix {
+      width: 100%;
+      border-collapse: collapse;
+      font: 16px/1.5 var(--font-body);
+    }
+
+    .matrix th, .matrix td {
+      padding: 12px 10px;
+      border: 1px solid var(--line);
+      text-align: left;
+    }
+
+    .matrix th {
+      background: var(--surface-strong);
+      font: 800 14px/1.3 var(--font-display);
+    }
+
+    .matrix td:first-child { font-weight: 700; }
+
+    /* row hover highlight（由 components.md JS 切换 class，颜色随主题） */
+    .matrix tbody tr.row-hi { background: var(--tint-accent); }
+
+    /* ——— Timeline ——— */
+    .timeline {
+      position: relative;
+      padding-left: 24px;
+      border-left: 2px solid var(--gold);
+    }
+
+    .timeline-item {
+      margin-bottom: 22px;
+      position: relative;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -30px;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    .timeline-item .time {
+      color: var(--muted);
+      font: 700 13px/1.3 var(--font-display);
+    }
+
+    .timeline-item h3 {
+      margin: 4px 0 6px;
+      font: 900 18px/1.25 var(--font-display);
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--ink-soft-2);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ——— Decision Tree ——— */
+    .decision details {
+      margin-bottom: 8px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .decision summary {
+      padding: 14px 18px;
+      cursor: pointer;
+      font: 800 16px/1.3 var(--font-display);
+    }
+
+    .decision .branch {
+      padding: 0 18px 14px;
+      color: var(--ink-soft-2);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ——— Concept Map ——— */
+    .concept-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      gap: 8px;
+    }
+
+    .concept-btn {
+      min-height: 52px;
+      padding: 10px 14px;
+      border: 1px solid var(--line);
+      background: var(--white);
+      cursor: pointer;
+      font: 700 14px/1.3 var(--font-display);
+    }
+
+    .concept-btn.active {
+      color: var(--white);
+      background: var(--gold);
+      border-color: var(--gold);
+    }
+
+    /* 关联章节高亮（由 components.md JS 切换 class，颜色随主题） */
+    .chapter-row.concept-hi { background: var(--tint-accent-strong); }
+
+    /* ——— Chapter Map ——— */
+    .chapter-list {
+      display: grid;
+      gap: 8px;
+    }
+
+    .chapter-row {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 12px;
+      align-items: baseline;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .chapter-row .ch-label {
+      color: var(--red);
+      font: 700 14px/1.3 var(--font-display);
+    }
+
+    .chapter-row h3 {
+      margin: 0 0 2px;
+      font: 900 17px/1.25 var(--font-display);
+    }
+
+    .chapter-row .ch-role {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    /* ——— Decision Rules ——— */
+    .rules {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      gap: 10px;
+    }
+
+    .rules li {
+      padding: 14px 18px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .rules li strong { color: var(--blue); }
+
+    .rules li em {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 14px;
+      font-style: normal;
+    }
+
+    /* ——— Transition ——— */
+    .transition {
+      margin: 28px 0 12px;
+      color: var(--ink-soft);
+      font-size: 17px;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    /* ——— Story Card ——— */
+    .story {
+      border: 1px solid var(--line);
+      background: var(--surface-strong);
+      padding: 24px 28px;
+      margin: 18px 0;
+      box-shadow: var(--shadow);
+    }
+
+    .story .story-label {
+      color: var(--red);
+      font: 700 13px/1.3 var(--font-display);
+      margin-bottom: 10px;
+    }
+
+    .story h3 {
+      margin: 0 0 14px;
+      font: 900 22px/1.2 var(--font-display);
+    }
+
+    .story p {
+      margin: 0 0 10px;
+      color: var(--ink-soft);
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    .story .story-insight {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      color: var(--blue);
+      font: 700 17px/1.6 var(--font-display);
+    }
+
+    /* ——— Before/After ——— */
+    .before-after {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      margin: 18px 0;
+    }
+
+    .ba-col {
+      padding: 22px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+
+    .ba-col.before { border-left: 4px solid var(--muted); }
+    .ba-col.after  { border-left: 4px solid var(--green); }
+
+    .ba-col .ba-label {
+      font: 700 13px/1.3 var(--font-display);
+      margin-bottom: 12px;
+    }
+
+    .ba-col.before .ba-label { color: var(--muted); }
+    .ba-col.after  .ba-label { color: var(--green); }
+
+    .ba-col h3 {
+      margin: 0 0 10px;
+      font: 900 18px/1.2 var(--font-display);
+    }
+
+    .ba-col p {
+      margin: 0;
+      color: var(--ink-soft-2);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ——— Accordion ——— */
+    .accordion details {
+      margin-bottom: 6px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .accordion summary {
+      padding: 16px 20px;
+      cursor: pointer;
+      font: 800 17px/1.3 var(--font-display);
+      list-style: none;
+    }
+
+    .accordion summary::-webkit-details-marker { display: none; }
+
+    .accordion summary::before {
+      content: "+";
+      display: inline-block;
+      width: 20px;
+      margin-right: 8px;
+      color: var(--gold);
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .accordion details[open] summary::before { content: "−"; }
+
+    .accordion .acc-body {
+      padding: 0 20px 16px 44px;
+      color: var(--ink-soft-2);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ——— Quote Card ——— */
+    .quote {
+      position: relative;
+      padding: 28px 32px 22px;
+      margin: 18px 0;
+      border-left: 4px solid var(--gold);
+      background: var(--surface-strong);
+      box-shadow: var(--shadow);
+    }
+
+    .quote::before {
+      content: "\201C";
+      position: absolute;
+      top: -8px;
+      left: 8px;
+      color: var(--gold);
+      font: 900 64px/1 var(--font-body);
+      opacity: .35;
+    }
+
+    .quote blockquote {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 19px;
+      line-height: 1.8;
+      font-style: normal;
+    }
+
+    .quote .q-source {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font: 13px/1.4 var(--font-display);
+    }
+
+    /* ——— Source Markers (A+B: margin + toggle) ——— */
+    .src-toggle {
+      position: fixed;
+      top: 14px;
+      right: 14px;
+      z-index: 100;
+      padding: 7px 14px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: var(--bar-bg);
+      backdrop-filter: blur(8px);
+      cursor: pointer;
+      font: 12px/1.2 var(--font-display);
+      color: var(--muted);
+      transition: all .2s;
+    }
+
+    .src-toggle:hover { border-color: var(--gold); color: var(--ink); }
+
+    /* ——— A: Margin marker (always visible, subtle) ——— */
+    .note[data-source],
+    .story[data-source],
+    .question[data-source],
+    .timeline-item[data-source],
+    .ba-col[data-source],
+    .accordion details[data-source],
+    .quote[data-source],
+    .explain[data-source] {
+      position: relative;
+      padding-left: 26px;
+      border-left: 3px solid var(--line);
+      transition: border-color .2s;
+    }
+
+    .note[data-source]:hover,
+    .story[data-source]:hover,
+    .question[data-source]:hover,
+    .timeline-item[data-source]:hover,
+    .ba-col[data-source]:hover,
+    .accordion details[data-source]:hover,
+    .quote[data-source]:hover,
+    .explain[data-source]:hover {
+      border-left-color: var(--blue);
+    }
+
+    /* Tooltip on hover */
+    [data-source]::after {
+      content: attr(data-source);
+      position: absolute;
+      left: -4px;
+      bottom: calc(100% + 4px);
+      padding: 3px 8px;
+      background: var(--ink);
+      color: var(--white);
+      font: 11px/1.3 var(--font-display);
+      border-radius: 3px;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s;
+      z-index: 3;
+    }
+
+    [data-source]:hover::after {
+      opacity: 1;
+    }
+
+    /* ——— B: Global toggle ON → show full source lines ——— */
+    body.show-sources .note::before,
+    body.show-sources .story::before,
+    body.show-sources .question::before,
+    body.show-sources .timeline-item::before,
+    body.show-sources .ba-col::before,
+    body.show-sources .accordion details::before,
+    body.show-sources .quote::before,
+    body.show-sources .explain::before {
+      content: attr(data-source);
+      display: block;
+      margin-bottom: 8px;
+      color: var(--muted);
+      font: 11px/1.3 var(--font-display);
+    }
+
+    /* ——— Deep Dive (追问入口) ——— */
+    .deep-dive-btn {
+      position: absolute;
+      bottom: 8px;
+      right: 8px;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--muted);
+      cursor: pointer;
+      font: 700 14px/1 var(--font-display);
+      opacity: 0;
+      transition: opacity .2s;
+      z-index: 2;
+    }
+
+    .note:hover .deep-dive-btn,
+    .story:hover .deep-dive-btn,
+    .question:hover .deep-dive-btn,
+    .timeline-item:hover .deep-dive-btn,
+    .ba-col:hover .deep-dive-btn,
+    .accordion details:hover .deep-dive-btn,
+    .quote:hover .deep-dive-btn,
+    .explain:hover .deep-dive-btn {
+      opacity: .65;
+    }
+
+    .deep-dive-btn:hover { opacity: 1 !important; background: var(--blue); color: var(--white); border-color: var(--blue); }
+
+    /* ——— Deep Dive Popover ——— */
+    .dd-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(23, 20, 17, .35);
+      backdrop-filter: blur(2px);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dd-overlay.active { display: flex; }
+
+    .dd-popover {
+      width: min(520px, calc(100% - 32px));
+      padding: 28px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      border-radius: 8px;
+    }
+
+    .dd-popover .dd-title {
+      margin: 0 0 6px;
+      font: 900 22px/1.2 var(--font-display);
+    }
+
+    .dd-popover .dd-ctx {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font: 13px/1.5 var(--font-display);
+    }
+
+    .dd-popover textarea {
+      width: 100%;
+      min-height: 72px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      font: 16px/1.6 var(--font-display);
+      color: var(--ink);
+      background: var(--white);
+      resize: vertical;
+      margin-bottom: 12px;
+    }
+
+    .dd-popover .dd-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .dd-popover .dd-submit {
+      padding: 10px 22px;
+      border: 0;
+      border-radius: 4px;
+      background: var(--blue);
+      color: var(--white);
+      cursor: pointer;
+      font: 700 15px/1.3 var(--font-display);
+    }
+
+    .dd-popover .dd-cancel {
+      padding: 10px 18px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: transparent;
+      cursor: pointer;
+      font: 700 15px/1.3 var(--font-display);
+      color: var(--muted);
+    }
+
+    /* ——— Toast ——— */
+    .dd-toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 14px 28px;
+      background: var(--ink);
+      color: var(--white);
+      border-radius: 6px;
+      font: 14px/1.4 var(--font-display);
+      opacity: 0;
+      transition: opacity .3s;
+      pointer-events: none;
+      z-index: 300;
+    }
+
+    .dd-toast.show { opacity: 1; }
+
+    /* ——— Footer ——— */
+    .footer {
+      margin-top: 34px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font: 14px/1.7 var(--font-display);
+    }
+
+    /* ——— Responsive ——— */
+    @media (max-width: 880px) {
+      .hero,
+      .split,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 28px;
+      }
+
+      .tabs {
+        position: static;
+        grid-template-columns: 1fr;
+      }
+
+      .chain {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .concept-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 520px) {
+      .page {
+        width: min(100% - 22px, 1180px);
+        padding-top: 18px;
+      }
+
+      h1 { font-size: 42px; }
+      .hero .lede { font-size: 18px; }
+      .chain { grid-template-columns: 1fr; }
+      .question { grid-template-columns: 1fr; }
+      .chapter-row { grid-template-columns: 1fr; }
+    }
+
+    /* ——— Component-specific styles injected by Agent ——— */
+    
+.tabs{grid-template-columns:repeat(4,1fr);}
+.hero{min-height:0;padding-bottom:16px;}
+.hero h1{font-size:clamp(34px,4.6vw,58px);line-height:1.12;letter-spacing:-.01em;max-width:15em;}
+.hero{align-items:start;}
+.chain{grid-template-columns:repeat(5,1fr);}
+@media (max-width:880px){.chain{grid-template-columns:1fr 1fr;}}
+
+  </style>
+</head>
+<body data-theme="warm-paper">
+  <button id="srcToggle" class="src-toggle" title="显示/隐藏出处">显示出处</button>
+  <main class="page">
+    
+<section class="hero" aria-labelledby="title">
+  <div>
+    <p class="eyebrow">《心理学入门 2e》· 第 14 章图解</p>
+    <h1 id="title">压力如何拖垮身体，又怎样恢复</h1>
+    <p class="lede">同一件难事，有人当成挑战，有人被压垮。差别不在事情大小，而在你如何评估它、身体如何为此付出代价。</p>
+  </div>
+  <aside class="thesis">
+    <strong>一句话总论</strong>
+    <span>压力不是事件本身，而是"要求超过资源"的判断；真正伤人的不是一次紧张，而是长期关不掉的警报。</span>
+  </aside>
+</section>
+    <nav class="tabs" aria-label="学习模块">
+<button class="tab" aria-selected="true" data-tab="what">压力是什么</button>
+<button class="tab" aria-selected="false" data-tab="chain">身体怎么被拖垮</button>
+<button class="tab" aria-selected="false" data-tab="stages">三个阶段</button>
+<button class="tab" aria-selected="false" data-tab="cope">怎么应对</button></nav>
+    
+<section class="panel active" id="what">
+  <p class="lead">先记住一件事：压力感来自两次判断，不是来自事件本身。同样一份工作，有人觉得是机会，有人觉得是威胁，身体的反应也完全不同。</p>
+  <div class="accordion">
+    <details open data-source="第14章 第1节 什么是压力？">
+      <summary>第一次判断：这件事对我是威胁吗？</summary>
+      <div class="acc-body"><p>这一步叫初级评估。你判断眼前的事是伤害、威胁，还是可以应对的挑战。同一件事被判定为威胁，压力反应才会启动。</p><p>所以"想开一点"有时真的有用——不是自我安慰，而是改变了第一步判断。</p></div>
+    </details>
+    <details data-source="第14章 第1节 什么是压力？">
+      <summary>第二次判断：我手上的资源够吗？</summary>
+      <div class="acc-body"><p>这一步叫次级评估。时间、钱、能力、支持，任何一项被判断为"不够"，压力感都会升级。</p><p>这也解释了一个反常识：资源少的人更容易被同样的事压垮，而不是他们更脆弱。</p></div>
+    </details>
+    <details data-source="第14章 第1节 什么是压力？">
+      <summary>身体已经先动了：两套系统</summary>
+      <div class="acc-body"><p>交感神经系统释放肾上腺素，几秒内让心跳加快、肌肉紧绷；HPA 轴释放皮质醇，慢一些，调动能量、抑制暂时用不上的功能。</p><p>短期这是保护，长期则是在透支：免疫、睡眠、消化都会被牵连。</p></div>
+    </details>
+    <details data-source="第14章 第1节 什么是压力？">
+      <summary>好压力和坏压力，界线在哪？</summary>
+      <div class="acc-body"><p>适度唤醒能提升表现，这是好压力（eustress）；超过你的最佳唤醒点，表现和健康一起下降，就成了坏压力（distress）。</p><p>界线不在事件，而在"唤醒水平是否过头、持续多久"。</p></div>
+    </details>
+  </div>
+</section>
+<section class="panel" id="chain">
+  <p class="lead">压力不是一瞬间的情绪，是一条链。点开每一环，看看它在身体里对应什么。</p>
+  <div class="chain" aria-label="压力的因果链" style="grid-template-columns:repeat(5,1fr)">
+    <button class="chain-step active" data-step="source">压力源</button>
+    <button class="chain-step " data-step="primary">初级评估</button>
+    <button class="chain-step " data-step="secondary">次级评估</button>
+    <button class="chain-step " data-step="arousal">生理激活</button>
+    <button class="chain-step " data-step="wear">累积损耗</button>
+  </div>
+  <div class="explain" id="chainText" data-source="第14章 第1-3节">工作、关系、经济、健康，甚至升职和结婚——任何需要重新调整生活的事，都可能是压力源。好事也会带来压力。</div>
+  <p class="lead" style="margin-top:26px">注意：这条链里，你能介入的环节不止"消除压力源"。改评估、补资源、缩短唤醒时间，都是入口。</p>
+</section>
+<section class="panel" id="stages">
+  <p class="lead">汉斯·塞利把身体面对长期压力的反应分成三段。多数人不是被第一段击倒，而是卡在第二段，直到第三段才发现。</p>
+  <div class="timeline">
+    <div class="timeline-item" data-source="第14章 第1节 什么是压力？">
+      <div class="time">第一阶段</div>
+      <h3>警报：先撑住</h3>
+      <p>交感神经被激活，心跳、呼吸、血糖上升，身体进入应战状态。这一阶段通常感觉"还能扛"。</p>
+    </div>
+    <div class="timeline-item" data-source="第14章 第1节 什么是压力？">
+      <div class="time">第二阶段</div>
+      <h3>抵抗：看起来正常，其实在消耗</h3>
+      <p>身体适应了高唤醒，表面恢复运转，但资源持续支出。容易烦躁、睡不好、注意力下降，常被误认为"最近状态差"。</p>
+    </div>
+    <div class="timeline-item" data-source="第14章 第1节 什么是压力？">
+      <div class="time">第三阶段</div>
+      <h3>耗竭：系统开始出问题</h3>
+      <p>资源耗尽，免疫力下降、伤口愈合变慢、情绪调节失灵，慢性病风险上升。这时才休息，恢复要更久。</p>
+    </div>
+  </div>
+  <div class="before-after" style="margin-top:26px">
+    <div class="ba-col before" data-source="第14章 第1节 什么是压力？">
+      <div class="ba-label">急性压力</div>
+      <h3>短、有终点、可恢复</h3>
+      <p>演讲前的紧张、考试周。压力源消失后，身体逐步回到基线，甚至带来成长。</p>
+    </div>
+    <div class="ba-col after" data-source="第14章 第3节 压力和疾病">
+      <div class="ba-label">慢性压力</div>
+      <h3>长、没有终点、持续高唤醒</h3>
+      <p>长期加班、照护家人、关系冲突。警报一直响，恢复被不断推迟，代价累积在免疫、心血管和睡眠上。</p>
+    </div>
+  </div>
+</section>
+<section class="panel" id="cope">
+  <p class="lead">应对没有"最正确"的一种，只有和处境匹配的一种。先分清：这件事能改，还是只能先安顿情绪。</p>
+  <table class="matrix">
+    <thead><tr><th>应对方式</th><th>改变压力源</th><th>调节情绪</th><th>长期代价</th></tr></thead>
+    <tbody>
+      <tr><td>问题聚焦</td><td>强</td><td>弱</td><td>低（但压力源不可控时会失效）</td></tr>
+      <tr><td>情绪聚焦</td><td>弱</td><td>强</td><td>低（可能掩盖问题）</td></tr>
+      <tr><td>回避</td><td>无</td><td>短暂缓解</td><td>高（问题积累）</td></tr>
+    </tbody>
+  </table>
+  <p class="lead" style="margin-top:22px">把这张表用在自己身上：先判断压力源是否可控。可控就用问题聚焦，不可控就先做情绪聚焦，别用回避假装解决。</p>
+  <div class="questions">
+    <article class="question" data-source="第14章 第4节 压力与应对">
+      <div><h3>这件事，我能改变哪一部分？</h3><p>写下一个具体动作，而不是"我要放松一点"。</p></div>
+    </article>
+    <article class="question" data-source="第14章 第4节 压力与应对">
+      <div><h3>我缺的是时间、能力，还是支持？</h3><p>次级评估里最弱的一环，往往就是最该补的资源。</p></div>
+    </article>
+    <article class="question" data-source="第14章 第1节 什么是压力？">
+      <div><h3>我的身体现在处在哪一段？</h3><p>还能扛、靠消耗维持，还是已经开始出问题。</p></div>
+    </article>
+    <article class="question" data-source="第14章 第3节 压力和疾病">
+      <div><h3>这种状态持续多久了？</h3><p>持续两周以上、影响工作与睡眠，值得找专业人士评估。</p></div>
+    </article>
+  </div>
+  <p class="lead" style="margin-top:22px">如果出现持续的情绪低落、功能明显受损，或自伤念头，请尽快联系精神科/心理治疗，或拨打全国心理援助热线 12356；紧急情况拨打 120/110。本页只做学习辅助，不构成诊断。</p>
+</section>
+    <footer class="footer">依据《心理学入门 2e》第 14 章整理 · 图为阅读辅助，事实以原文为准 · 不构成诊断或治疗建议</footer>
+  </main>
+
+  <div class="dd-overlay" id="ddOverlay">
+    <div class="dd-popover">
+      <p class="dd-title" id="ddTitle"></p>
+      <p class="dd-ctx" id="ddCtx"></p>
+      <textarea id="ddInput" placeholder="输入你想追问的细节..."></textarea>
+      <div class="dd-actions">
+        <button class="dd-submit" id="ddSubmit">复制追问到剪贴板</button>
+        <button class="dd-cancel" id="ddCancel">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="dd-toast" id="ddToast"></div>
+  <script>
+    var toggle = document.getElementById("srcToggle");
+    if (toggle) {
+      toggle.onclick = function() {
+        document.body.classList.toggle("show-sources");
+        this.classList.toggle("active");
+        this.textContent = document.body.classList.contains("show-sources") ? "隐藏出处" : "显示出处";
+      };
+    }
+    // Deep dive popover
+    (function() {
+      var overlay = document.getElementById("ddOverlay");
+      var titleEl = document.getElementById("ddTitle");
+      var ctxEl = document.getElementById("ddCtx");
+      var input = document.getElementById("ddInput");
+      var toast = document.getElementById("ddToast");
+      var currentRef = "";
+
+      function showToast(msg) {
+        toast.textContent = msg;
+        toast.classList.add("show");
+        setTimeout(function() { toast.classList.remove("show"); }, 2000);
+      }
+
+      window.openDeepDive = function(conceptName, source, el) {
+        currentRef = source;
+        titleEl.textContent = "追问「" + conceptName + "」";
+        ctxEl.textContent = "来源：" + source + "  |  将生成一个结构化的追问 prompt 复制到剪贴板，贴回对话即可深入。";
+        input.value = "";
+        overlay.classList.add("active");
+        setTimeout(function() { input.focus(); }, 200);
+      };
+
+      document.getElementById("ddCancel").onclick = function() {
+        overlay.classList.remove("active");
+      };
+
+      overlay.onclick = function(e) {
+        if (e.target === overlay) overlay.classList.remove("active");
+      };
+
+      document.getElementById("ddSubmit").onclick = function() {
+        var q = input.value.trim();
+        if (!q) { showToast("请输入你的问题"); return; }
+        var bookName = document.title.split("《")[1].split("》")[0];
+        var concept = titleEl.textContent.replace("追问「","").replace("」","");
+        var prompt = "对《" + bookName + "》中「" + concept + "」，深入追问：" + q + "。\n\n请用 book-to-webpage skill 生成一个交互 HTML 页面来回答这个问题。知识库路径：" + document.title + "，出处：" + currentRef;
+        navigator.clipboard.writeText(prompt).then(function() {
+          overlay.classList.remove("active");
+          showToast("追问 prompt 已复制，贴回 Claude 对话即可");
+        }).catch(function() {
+          showToast("复制失败，请手动复制：" + prompt.substring(0, 60) + "...");
+        });
+      };
+    })();
+    
+document.querySelectorAll(".tab").forEach(function(t){
+  t.onclick=function(){
+    document.querySelectorAll(".tab").forEach(function(x){x.setAttribute("aria-selected","false");});
+    document.querySelectorAll(".panel").forEach(function(p){p.classList.remove("active");});
+    t.setAttribute("aria-selected","true");
+    var panel=document.getElementById(t.dataset.tab);
+    if(panel){panel.classList.add("active");}
+  };
+});
+var chainSteps={"source":"工作、关系、经济、健康，甚至升职和结婚——任何需要重新调整生活的事，都可能是压力源。好事也会带来压力。","primary":"你判断它是不是威胁、伤害或挑战。判断为威胁，身体才开始进入应激。","secondary":"你判断自己的时间、能力、支持够不够。觉得无计可施，压力感最强。","arousal":"交感神经与 HPA 轴启动：肾上腺素让你立刻紧绷，皮质醇慢慢调动能量。","wear":"警报长期不关，身体停在抵抗阶段，最终进入耗竭：免疫力下降、睡眠紊乱、慢性病风险上升。"};
+document.querySelectorAll(".chain-step").forEach(function(b){
+  b.onclick=function(){
+    document.querySelectorAll(".chain-step").forEach(function(x){x.classList.remove("active");});
+    b.classList.add("active");
+    var el=document.getElementById("chainText");
+    if(el){el.textContent=chainSteps[b.dataset.step]||"";}
+  };
+});
+document.querySelectorAll(".matrix tbody tr").forEach(function(r){
+  r.onmouseenter=function(){r.classList.add("row-hi");};
+  r.onmouseleave=function(){r.classList.remove("row-hi");};
+});
+
+  </script>
+</body>
+</html>

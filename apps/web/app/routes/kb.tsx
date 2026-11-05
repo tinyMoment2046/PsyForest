@@ -101,6 +101,28 @@ export default function KbIndex() {
         </ul>
       </section>
 
+      <section className="mt-10" aria-labelledby="specials">
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
+          <h2 id="specials" className="text-[15px] font-semibold text-ink">
+            图解专题
+          </h2>
+          <span className="text-[12px] text-ink-4">可点击、可切换的阅读页</span>
+        </div>
+        <a
+          href="/kb/specials/stress.html"
+          target="_blank"
+          rel="noopener"
+          className="group mt-3 flex flex-col rounded-card border border-line bg-surface px-5 py-4 transition-colors hover:border-line-strong hover:bg-bg-sunk"
+        >
+          <span className="text-[11.5px] text-ink-4">第 14 章 · 压力</span>
+          <span className="mt-1 text-[16px] font-semibold text-ink">压力：身体怎样被拖垮，又怎样恢复</span>
+          <span className="mt-1 line-clamp-2 text-[12.5px] leading-6 text-ink-3">
+            因果链、三个阶段、应对方式对比，点开每一环看解释，右上角可切换主题与出处。
+          </span>
+          <span className="mt-3 text-[12.5px] font-medium text-accent">打开图解 ↗</span>
+        </a>
+      </section>
+
       <section className="mt-10" aria-labelledby="cards">
         <div className="flex flex-wrap items-baseline justify-between gap-2">
           <h2 id="cards" className="text-[15px] font-semibold text-ink">

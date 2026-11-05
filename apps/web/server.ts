@@ -32,6 +32,7 @@ const TYPES: Record<string, string> = {
   ".webp": "image/webp",
   ".woff2": "font/woff2",
   ".json": "application/json",
+  ".html": "text/html; charset=utf-8",
   ".txt": "text/plain; charset=utf-8",
   ".ico": "image/x-icon",
   ".map": "application/json",
