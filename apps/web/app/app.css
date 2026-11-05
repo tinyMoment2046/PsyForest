@@ -671,3 +671,129 @@
   color: var(--ink-3);
 }
 .kb-prose aside.kb-callout > ul, .kb-prose aside.kb-callout > ol { margin-top: 0.2em; }
+
+/* ---------------------------------------------------------------------------
+   Knowledge base reading guide: a card is a short exchange, not a form.
+   Two voices carry the page — the claim set in serif (the book), the doubt in
+   a slimmer sans in the margin. Five night dots are the only ornament.
+   --------------------------------------------------------------------------- */
+.kb-guide { max-width: 660px; }
+.kb-guide-head { margin-bottom: 2.1rem; }
+.kb-guide-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--ink-4);
+}
+.kb-guide-nights { display: inline-flex; flex-shrink: 0; gap: 5px; }
+.kb-guide-night { width: 5px; height: 5px; border-radius: 999px; background: var(--line-strong); }
+.kb-guide-night[data-on] { background: var(--accent); }
+.kb-guide-title {
+  margin: 0.7rem 0 0;
+  font-size: 26px;
+  font-weight: 650;
+  line-height: 1.35;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.kb-guide-voice {
+  margin: 0;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--ink-4);
+}
+
+.kb-guide-claim { padding-top: 1.6rem; border-top: 1px solid var(--line); }
+.kb-guide-claim-text {
+  margin: 0.8rem 0 0;
+  font-family: "Songti SC", "Noto Serif SC", "Source Han Serif SC", "Yu Mincho", Georgia, serif;
+  font-size: 20.5px;
+  font-weight: 400;
+  line-height: 1.85;
+  letter-spacing: 0.008em;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+.kb-guide-youth {
+  margin: 1.6rem 0 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--line-strong);
+}
+.kb-guide-youth-text {
+  margin: 0.5rem 0 0;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--ink-3);
+}
+
+.kb-guide-boundary {
+  margin: 2rem 0 0;
+  padding: 0.95rem 1.1rem;
+  border-radius: var(--radius-tile);
+  background: var(--amber-soft);
+}
+.kb-guide-boundary > p + p {
+  margin: 0.45rem 0 0;
+  font-size: 13.5px;
+  line-height: 1.85;
+  color: var(--ink-2);
+}
+
+.kb-guide-prompt {
+  margin: 1.1rem 0 0;
+  padding: 1.05rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-card);
+  background: var(--surface);
+}
+.kb-guide-prompt .kb-guide-voice { color: var(--accent); }
+.kb-guide-prompt > p + p {
+  margin: 0.45rem 0 0;
+  font-size: 15px;
+  line-height: 1.85;
+  color: var(--ink);
+}
+
+@media (min-width: 640px) {
+  .kb-guide-title { font-size: 29px; }
+  .kb-guide-claim-text { font-size: 22px; }
+  .kb-guide-youth { margin-left: 3.25rem; }
+}
+
+/* Book page: the provenance note, once, and the terms the book turns on. */
+.kb-book-notice {
+  margin-top: 2rem;
+  padding: 1rem 1.2rem;
+  border-left: 2px solid var(--line-strong);
+  border-radius: 0 var(--radius-tile) var(--radius-tile) 0;
+  background: var(--bg-muted);
+}
+.kb-book-notice > p + p {
+  margin: 0.45rem 0 0;
+  font-size: 13.5px;
+  line-height: 1.85;
+  color: var(--ink-2);
+}
+.kb-concepts {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
+}
+.kb-concept {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-tile);
+  background: var(--surface);
+}
+.kb-concept dt { font-size: 13.5px; font-weight: 650; letter-spacing: 0.01em; color: var(--ink); }
+.kb-concept dd { margin: 0.25rem 0 0; font-size: 13px; line-height: 1.7; color: var(--ink-3); }
+@media (min-width: 640px) {
+  .kb-concepts { grid-template-columns: 1fr 1fr; }
+}

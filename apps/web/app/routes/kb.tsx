@@ -1,5 +1,6 @@
 import { Link } from "react-router";
 import { LIBRARY } from "../features/kb/data";
+import { GUIDES } from "../features/kb/guides";
 import { pageMeta, siteUrl } from "../lib/seo";
 import { edgeTtl } from "../lib/api.server";
 import type { Screen } from "../components/shell/screens";
@@ -55,17 +56,57 @@ export default function KbIndex() {
           知识库
         </p>
         <h1 data-page-title="" className="mt-3 text-[30px] font-semibold leading-[1.25] tracking-[-0.01em] text-ink sm:text-[34px]">
-          慢慢读完几本书
+          先说你遇到的事
         </h1>
         <p className="mt-4 max-w-[62ch] text-[14.5px] leading-7 text-ink-2">
-          这里放导入的心理学书籍与长文：保留原来的章节结构，按节阅读，图片与表格都在本地。以后新增的书会出现在下面。
+          从心理学教材到原创导读，按主题与章节慢慢读。转载内容注明来源与许可；受版权保护的书籍只刊载独立撰写的学习笔记。
         </p>
-        <p className="mt-5 text-[12.5px] text-ink-4">
-          {LIBRARY.books.length} 本 · {total} 节
+        <p className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[12.5px] text-ink-4">
+          <span>
+            {LIBRARY.books.length} 本 · {total} 节
+          </span>
+          <Link to="/kb/concepts" className="text-accent underline decoration-accent/30 underline-offset-3 hover:decoration-accent">
+            概念索引
+          </Link>
         </p>
       </header>
 
-      <ul className="mt-8 grid gap-3 sm:grid-cols-2">
+      <section className="mt-9" aria-labelledby="reader-questions">
+        <div className="flex flex-wrap items-baseline justify-between gap-2">
+          <h2 id="reader-questions" className="text-[15px] font-semibold text-ink">
+            按你现在遇到的事
+          </h2>
+          <Link to="/kb/guides" className="text-[12.5px] text-accent underline decoration-accent/30 underline-offset-3 hover:decoration-accent">
+            全部 {GUIDES.length} 个问题
+          </Link>
+        </div>
+        <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
+          {GUIDES.slice(0, 6).map((g) => (
+            <li key={g.slug}>
+              <Link
+                to={`/kb/guides/${g.slug}`}
+                className="group flex h-full items-start gap-3 rounded-card border border-line bg-surface px-4 py-3.5 transition-colors hover:border-line-strong hover:bg-bg-sunk"
+              >
+                <span className="mt-[7px] size-1.5 shrink-0 rounded-full bg-accent" />
+                <span className="min-w-0">
+                  <span className="block text-[14.5px] font-medium leading-6 text-ink">{g.question}</span>
+                  <span className="mt-0.5 block text-[11.5px] text-ink-4">
+                    {g.tags[0]} · {g.readMinutes} 分钟
+                  </span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mt-10" aria-labelledby="books">
+        <h2 id="books" className="text-[15px] font-semibold text-ink">
+          书
+        </h2>
+      </section>
+
+      <ul className="mt-3 grid gap-3 sm:grid-cols-2">
         {LIBRARY.books.map((book) => (
           <li key={book.id}>
             <Link
@@ -91,7 +132,7 @@ export default function KbIndex() {
       </ul>
 
       <p className="mt-10 border-t border-line-soft pt-4 text-[12px] leading-relaxed text-ink-4">
-        每本书保留原作者、原始来源与许可；仅收录允许转载的内容。内容用于学习，不构成诊断或治疗建议。
+        教材标注来源与许可；原创导读不提供受版权保护作品的全文。内容用于学习，不构成诊断或治疗建议。
       </p>
     </div>
   );

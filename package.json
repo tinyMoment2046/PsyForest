@@ -25,7 +25,8 @@
     "test:standalone": "node --import ./tests/standalone.ts --test --test-concurrency=6 --test-timeout=120000 \"tests/*.standalone.test.ts\" \"modules/*/tests/*.standalone.test.ts\"",
     "test:web": "node --test --test-concurrency=1 \"apps/web/tests/*.test.ts\"",
     "kb:import": "node scripts/import-kb.ts",
-    "kb:images": "node scripts/localize-kb-images.ts"
+    "kb:images": "node scripts/localize-kb-images.ts",
+    "kb:add-epub": "node scripts/import-epub.ts"
   },
   "devDependencies": {
     "@modelcontextprotocol/client": "2.3.0",

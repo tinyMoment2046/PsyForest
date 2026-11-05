@@ -17,52 +17,36 @@
       "sections": 184
     },
     {
-      "id": "meditations",
-      "title": "Meditations",
-      "subtitle": "EPUB 导入",
-      "authors": "Emperor of Rome Marcus Aurelius",
-      "kind": "book",
+      "id": "courage-to-be-disliked-guide",
+      "title": "《被讨厌的勇气》原创导读",
+      "subtitle": "沿五夜对话读懂概念 · 非原书全文",
+      "authors": "原著：岸见一郎、古贺史健；中译：渠海霞",
+      "kind": "collection",
       "license": {
-        "name": "Public domain in the USA.",
+        "name": "本站原创导读",
         "url": ""
       },
-      "source": "https://www.gutenberg.org/ebooks/2680",
-      "sourceContent": "https://www.gutenberg.org/ebooks/2680",
+      "source": "",
+      "sourceContent": "",
       "importedAt": "2026-11-04",
-      "chapters": 17,
+      "chapters": 5,
+      "sections": 20
+    },
+    {
+      "id": "psychology-and-life-19-guide",
+      "title": "《心理学与生活》（第19版）原创导读",
+      "subtitle": "章节主线与关键概念 · 原创导读，非原书全文",
+      "authors": "理查德·格里格、菲利普·津巴多",
+      "kind": "collection",
+      "license": {
+        "name": "本站原创导读；原书版权归权利人所有，不提供原书全文或插图",
+        "url": ""
+      },
+      "source": "",
+      "sourceContent": "",
+      "importedAt": "2026-11-04",
+      "chapters": 16,
       "sections": 17
-    },
-    {
-      "id": "test-alice",
-      "title": "Alice's Adventures in Wonderland",
-      "subtitle": "EPUB 导入",
-      "authors": "Lewis Carroll",
-      "kind": "book",
-      "license": {
-        "name": "Public domain in the USA.",
-        "url": ""
-      },
-      "source": "本地文件：alice.epub",
-      "sourceContent": "",
-      "importedAt": "2026-11-04",
-      "chapters": 12,
-      "sections": 12
-    },
-    {
-      "id": "test-oz",
-      "title": "The Wonderful Wizard of Oz",
-      "subtitle": "EPUB 导入",
-      "authors": "L. Frank Baum",
-      "kind": "book",
-      "license": {
-        "name": "Public domain in the USA.",
-        "url": ""
-      },
-      "source": "本地文件：oz.epub",
-      "sourceContent": "",
-      "importedAt": "2026-11-04",
-      "chapters": 26,
-      "sections": 26
     }
   ]
 }

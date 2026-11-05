@@ -1,5 +1,5 @@
 import { Link, useLoaderData } from "react-router";
-import { bookById, bookToc, sectionHref } from "../features/kb/data";
+import { bookById, bookToc, hasNote, sectionHref } from "../features/kb/data";
 import { KbCrumbs, KbFrame } from "../features/kb/KbFrame";
 import { pageMeta } from "../lib/seo";
 import { edgeTtl } from "../lib/api.server";
@@ -42,7 +42,7 @@ export default function KbBookPage() {
         </h1>
         <p className="mt-2 text-[13px] text-ink-3">{toc.book.authors}</p>
         <p className="mt-3 text-[12.5px] text-ink-4">
-          {toc.book.chapters} 章 · {toc.book.sections} 节 · {toc.book.license.name}
+          {toc.book.chapters} {toc.book.chapterUnit ?? "章"} · {toc.book.sections} 节 · {toc.book.license.name}
         </p>
         {first?.sections[0] && (
           <Link
@@ -54,6 +54,29 @@ export default function KbBookPage() {
           </Link>
         )}
       </header>
+
+      {toc.book.notice ? (
+        <aside className="kb-book-notice">
+          <p className="kb-guide-voice">怎么读这本书</p>
+          <p>{toc.book.notice}</p>
+        </aside>
+      ) : null}
+
+      {toc.book.concepts?.length ? (
+        <section className="mt-9" aria-labelledby="concepts">
+          <h2 id="concepts" className="text-[15px] font-semibold text-ink">
+            关键概念
+          </h2>
+          <dl className="kb-concepts">
+            {toc.book.concepts.map((c) => (
+              <div key={c.term} className="kb-concept">
+                <dt>{c.term}</dt>
+                <dd>{c.gloss}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      ) : null}
 
       <section className="mt-8" aria-labelledby="chapters">
         <h2 id="chapters" className="text-[15px] font-semibold text-ink">
@@ -67,7 +90,9 @@ export default function KbBookPage() {
                 className="group flex h-full flex-col rounded-card border border-line bg-surface px-4 py-3.5 transition-colors hover:border-line-strong hover:bg-bg-sunk"
               >
                 <span className="flex items-center gap-2">
-                  <span className="num text-[11.5px] font-medium tracking-wide text-ink-4">第 {chapter.slug} 章</span>
+                  <span className="num text-[11.5px] font-medium tracking-wide text-ink-4">
+                    第 {Number(chapter.slug)} {toc.book.chapterUnit ?? "章"}
+                  </span>
                   <span className="text-[11.5px] text-ink-4">· {chapter.sections.length} 节</span>
                 </span>
                 <span className="mt-1 text-[15.5px] font-semibold leading-6 text-ink">{chapter.title}</span>
@@ -81,15 +106,11 @@ export default function KbBookPage() {
       </section>
 
       <p className="mt-10 border-t border-line-soft pt-4 text-[12px] leading-relaxed text-ink-4">
-        来源：
-        <a href={toc.book.source} target="_blank" rel="noopener noreferrer" className="underline decoration-line-strong underline-offset-2 hover:text-ink-2">
-          原始页面
-        </a>
-        ，按{" "}
-        <a href={toc.book.license.url} target="_blank" rel="noopener noreferrer" className="underline decoration-line-strong underline-offset-2 hover:text-ink-2">
-          {toc.book.license.name}
-        </a>{" "}
-        许可整理。内容仅用于学习，不构成诊断或治疗建议。
+        {toc.book.source ? <>
+          来源：<a href={toc.book.source} target="_blank" rel="noopener noreferrer" className="underline decoration-line-strong underline-offset-2 hover:text-ink-2">原始页面</a>，按{" "}
+          <a href={toc.book.license.url} target="_blank" rel="noopener noreferrer" className="underline decoration-line-strong underline-offset-2 hover:text-ink-2">{toc.book.license.name}</a> 许可整理。
+        </> : <>{toc.book.license.name}。不提供原书全文或插图。</>}
+        内容仅用于学习，不构成诊断或治疗建议。
       </p>
     </KbFrame>
   );

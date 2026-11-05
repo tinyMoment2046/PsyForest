@@ -1,5 +1,5 @@
 import { Link, useLoaderData } from "react-router";
-import { bookById, bookToc, chapterBySlug, sectionHref } from "../features/kb/data";
+import { bookById, bookToc, chapterBySlug, hasNote, sectionHref } from "../features/kb/data";
 import { KbCrumbs, KbFrame } from "../features/kb/KbFrame";
 import { pageMeta } from "../lib/seo";
 import { edgeTtl } from "../lib/api.server";
@@ -15,7 +15,8 @@ export function headers() {
 
 export async function loader({ params }: Route.LoaderArgs) {
   const toc = bookToc(params.book);
-  return { book: bookById(params.book), toc, chapter: toc ? chapterBySlug(toc, params.chapter) : null };
+  const chapter = toc ? chapterBySlug(toc, params.chapter) : null;
+  return { book: bookById(params.book), toc, chapter, note: !!(chapter && hasNote(params.book as string, chapter.slug)) };
 }
 
 export function meta({ loaderData, params }: Route.MetaArgs) {
@@ -25,15 +26,16 @@ export function meta({ loaderData, params }: Route.MetaArgs) {
   const { chapter, toc } = loaderData;
   return pageMeta({
     title: `${chapter.title} · ${toc.book.title}`,
-    description: `《${toc.book.title}》第 ${Number(chapter.slug)} 章「${chapter.title}」，共 ${chapter.sections.length} 节。`,
+    description: `《${toc.book.title}》第 ${Number(chapter.slug)} ${toc.book.chapterUnit ?? "章"}「${chapter.title}」，共 ${chapter.sections.length} 节。`,
     path: `/kb/${params.book}/${chapter.slug}`,
   });
 }
 
 export default function KbChapterPage() {
-  const { book, toc, chapter } = useLoaderData<typeof loader>();
+  const { book, toc, chapter, note } = useLoaderData<typeof loader>();
   if (!book || !toc || !chapter) return null;
   const index = toc.chapters.findIndex((c) => c.slug === chapter.slug);
+  const unit = toc.book.chapterUnit ?? "章";
   const prev = index > 0 ? toc.chapters[index - 1] : null;
   const next = index < toc.chapters.length - 1 ? toc.chapters[index + 1] : null;
 
@@ -41,11 +43,25 @@ export default function KbChapterPage() {
     <KbFrame bookId={book.id} toc={toc} active={chapter}>
       <KbCrumbs bookId={book.id} toc={toc} chapter={chapter} />
       <header>
-        <p className="num text-[12px] font-medium tracking-wide text-ink-4">第 {chapter.slug} 章</p>
+        <p className="num text-[12px] font-medium tracking-wide text-ink-4">
+          第 {Number(chapter.slug)} {toc.book.chapterUnit ?? "章"}
+        </p>
         <h1 data-page-title="" className="mt-1.5 text-[27px] font-semibold leading-[1.3] tracking-[-0.01em] text-ink sm:text-[30px]">
           {chapter.title}
         </h1>
-        <p className="mt-2 text-[13px] text-ink-4">{chapter.sections.length} 节 · 建议按顺序阅读</p>
+        {chapter.intro ? (
+          <p className="mt-3 max-w-[46ch] text-[14px] leading-7 text-ink-2">{chapter.intro}</p>
+        ) : null}
+        <p className="mt-3 text-[13px] text-ink-4">{chapter.sections.length} 节 · 建议按顺序阅读</p>
+        {note && (
+          <Link
+            to={`/kb/${book.id}/notes/${chapter.slug}`}
+            className="mt-4 inline-flex h-9 items-center gap-2 rounded-control bg-ink px-4 text-[13.5px] font-medium text-surface transition-opacity hover:opacity-90"
+          >
+            先读本章拆解
+            <IconArrowRight size={15} />
+          </Link>
+        )}
       </header>
 
       <ol className="mt-7 divide-y divide-line-soft overflow-hidden rounded-card border border-line bg-surface">
@@ -69,14 +85,14 @@ export default function KbChapterPage() {
         {prev ? (
           <Link to={`/kb/${book.id}/${prev.slug}`} className="group flex min-w-0 items-center gap-1.5 text-ink-3 hover:text-ink">
             <IconChevronLeft size={15} />
-            <span className="truncate">上一章 · {prev.title}</span>
+            <span className="truncate">上一{unit} · {prev.title}</span>
           </Link>
         ) : (
           <span />
         )}
         {next ? (
           <Link to={`/kb/${book.id}/${next.slug}`} className="group flex min-w-0 items-center gap-1.5 text-right text-ink-3 hover:text-ink">
-            <span className="truncate">下一章 · {next.title}</span>
+            <span className="truncate">下一{unit} · {next.title}</span>
             <IconChevronRight size={15} />
           </Link>
         ) : (

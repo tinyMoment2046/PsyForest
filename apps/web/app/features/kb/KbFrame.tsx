@@ -57,15 +57,25 @@ function Tree({
 }) {
   return (
     <nav aria-label="知识库目录">
-      <Link to="/kb" className="mb-1 flex items-center gap-1.5 rounded-control px-2 py-1 text-[12px] text-ink-4 hover:text-ink-2">
-        ← 全部书籍
-      </Link>
+      <div className="mb-1 flex items-center justify-between px-2">
+        <Link to="/kb" className="flex items-center gap-1.5 py-1 text-[12px] text-ink-4 hover:text-ink-2">
+          ← 全部书籍
+        </Link>
+        <span className="flex items-center gap-2">
+          <Link to="/kb/guides" className="py-1 text-[12px] text-ink-4 hover:text-ink-2">
+            读者问题
+          </Link>
+          <Link to="/kb/concepts" className="py-1 text-[12px] text-ink-4 hover:text-ink-2">
+            概念
+          </Link>
+        </span>
+      </div>
       <Link to={`/kb/${bookId}`} className="flex items-center gap-2 rounded-control px-2 py-2 text-[15px] font-semibold text-ink hover:bg-bg-sunk">
         <IconBook size={18} className="text-accent" />
         <span className="truncate">{toc.book.title}</span>
       </Link>
       <p className="px-2 pb-2 pt-1 text-[12px] text-ink-4">
-        {toc.book.chapters} 章 · {toc.book.sections} 节
+        {toc.book.chapters} {toc.book.chapterUnit ?? "章"} · {toc.book.sections} 节
       </p>
       <ul className="mt-1 space-y-0.5">
         {toc.chapters.map((chapter) => {
@@ -108,14 +118,10 @@ function Tree({
       </ul>
       <div className="mt-6 border-t border-line-soft px-2 pt-3 text-[11.5px] leading-relaxed text-ink-4">
         <p>
-          来源：
-          <a href={toc.book.source} target="_blank" rel="noopener noreferrer" className="underline decoration-line-strong underline-offset-2 hover:text-ink-2">
-            原始页面
-          </a>
-          ·{" "}
-          <a href={toc.book.license.url} target="_blank" rel="noopener noreferrer" className="underline decoration-line-strong underline-offset-2 hover:text-ink-2">
-            {toc.book.license.name}
-          </a>
+          {toc.book.source ? <>
+            来源：<a href={toc.book.source} target="_blank" rel="noopener noreferrer" className="underline decoration-line-strong underline-offset-2 hover:text-ink-2">原始页面</a>
+            · <a href={toc.book.license.url} target="_blank" rel="noopener noreferrer" className="underline decoration-line-strong underline-offset-2 hover:text-ink-2">{toc.book.license.name}</a>
+          </> : toc.book.license.name}
         </p>
         <p className="mt-1">{toc.book.authors}</p>
       </div>

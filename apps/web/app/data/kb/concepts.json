@@ -1,0 +1,765 @@
+{
+ "generatedAt": "2026-11-04",
+ "concepts": [
+  {
+   "name": "本我、自我、超我 (Id, Ego, Superego)",
+   "explanation": "弗洛伊德提出的心理结构三部分。本我是原始冲动（快乐原则）；超我是道德良心（完美原则）；自我是理性调节者（现实原则），负责在两者间平衡。",
+   "confusion": "不要将“自我”(Ego) 等同于日常口语中的“自尊心”或“自我概念”。在弗洛伊德语境中，Ego是一个功能性的中介系统。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "11",
+   "chapterTitle": "人格",
+   "href": "/kb/psychology-2e/notes/11"
+  },
+  {
+   "name": "毕生发展 (Lifespan Development)",
+   "explanation": "指人类从受孕到死亡整个生命周期中发生的变化和成长过程。它关注的是个体如何改变以及如何保持不变。",
+   "confusion": "容易混淆为仅指“儿童成长”。实际上，它涵盖所有年龄段，包括成年后的衰退和老年期的适应，且强调发展是终身的，而非止于成年。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "09",
+   "chapterTitle": "毕生发展",
+   "href": "/kb/psychology-2e/notes/09"
+  },
+  {
+   "name": "编码 (Encoding)",
+   "explanation": "将感官信息转化为大脑可存储形式的过程。分为自动处理（无需努力，如记住午餐吃了什么）和费力处理（需集中注意力，如学习新技能）。",
+   "confusion": "容易与“存储”混淆。编码是输入阶段，存储是保留阶段。若未正确编码，后续无法回忆，这被称为“编码失败”，而非遗忘。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "08",
+   "chapterTitle": "记忆",
+   "href": "/kb/psychology-2e/notes/08"
+  },
+  {
+   "name": "操作条件作用 (Operant Conditioning)",
+   "explanation": "一种联想学习，生物学会将特定行为与其后果（奖励或惩罚）联系起来。令人愉快的后果增加行为频率，不愉快的后果减少行为频率。",
+   "confusion": "核心难点在于区分“负强化”和“惩罚”。负强化是通过移除厌恶刺激来**增加**行为；惩罚是通过施加厌恶刺激或移除愉快刺激来**减少**行为。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "06",
+   "chapterTitle": "学习",
+   "href": "/kb/psychology-2e/notes/06"
+  },
+  {
+   "name": "大五人格 (Big Five / OCEAN)",
+   "explanation": "目前最广泛接受的特质模型，包含五个维度：开放性(O)、尽责性(C)、外向性(E)、宜人性(A)、神经质(N)。每个维度都是连续谱系，大多数人处于中间位置。",
+   "confusion": "特质不是非黑即白的标签（如“你是内向的人”），而是程度问题（如“你的外向性得分较低”）。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "11",
+   "chapterTitle": "人格",
+   "href": "/kb/psychology-2e/notes/11"
+  },
+  {
+   "name": "动作电位",
+   "explanation": "神经元沿轴突传导的电信号，遵循“全有或全无”原则：要么达到阈值完全触发，要么不触发，没有中间强度。",
+   "confusion": "易误解为信号强弱由电压大小决定。其实信号强度由发放频率决定，单次动作电位的幅度是固定的。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "03",
+   "chapterTitle": "生物心理学",
+   "href": "/kb/psychology-2e/notes/03"
+  },
+  {
+   "name": "反适应 (Counterconditioning)",
+   "explanation": "一种行为疗法技术，通过建立新的反应来取代旧的、不良的条件反射。核心逻辑是用 incompatible（不相容）的反应替代恐惧或厌恶。",
+   "confusion": "易与“惩罚”混淆。反适应不是通过痛苦刺激制止行为（那是厌恶疗法的一部分），而是通过引入放松或愉悦刺激来改变对特定情境的情绪反应（如系统脱敏）。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "16",
+   "chapterTitle": "治疗与疗法",
+   "href": "/kb/psychology-2e/notes/16"
+  },
+  {
+   "name": "反应范围",
+   "explanation": "一种关于智力来源的理论。认为基因设定了一个潜在的智力上限和下限（范围），而环境刺激决定个体最终落在这个范围的哪个位置。",
+   "confusion": "这不是说智力完全由基因决定，也不是完全由环境决定，而是两者的交互作用：基因提供可能性，环境实现具体水平。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "07",
+   "chapterTitle": "思维与智力",
+   "href": "/kb/psychology-2e/notes/07"
+  },
+  {
+   "name": "防御机制 (Defense Mechanisms)",
+   "explanation": "自我为了减轻焦虑而无意识使用的保护性策略，通过扭曲现实来维持心理平衡。常见类型包括压抑、否认、投射、合理化、升华等。",
+   "confusion": "防御机制是无意识的自动过程，不同于有意识的“借口”或“撒谎”。如果一个人明知故犯地找理由，那通常不被视为严格意义上的心理防御机制。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "11",
+   "chapterTitle": "人格",
+   "href": "/kb/psychology-2e/notes/11"
+  },
+  {
+   "name": "非机构化 (Deinstitutionalization)",
+   "explanation": "指关闭大型精神病院，将患者转移回社区接受当地治疗的政策转变。始于1960年代，旨在提供更人道的护理环境。",
+   "confusion": "容易与“去中心化”混淆。非机构化特指精神卫生领域的政策变革，而非一般行政权力的下放；且其初衷虽好，但因配套社区服务不足，导致部分患者无家可归或进入监狱系统。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "16",
+   "chapterTitle": "治疗与疗法",
+   "href": "/kb/psychology-2e/notes/16"
+  },
+  {
+   "name": "感觉 vs. 知觉",
+   "explanation": "感觉是物理过程，指感官受体检测到环境中的能量（如光波、声波）并将其转化为神经冲动（转导）。知觉是心理过程，指大脑对这些神经信号进行组织、解释和有意识的体验。",
+   "confusion": "容易混淆的是认为看到/听到就是“客观事实”。实际上，知觉受到期望、注意力和过往经验的强烈塑造，并非所有感觉都会转化为意识层面的知觉（如感官适应）。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "05",
+   "chapterTitle": "感觉与知觉",
+   "href": "/kb/psychology-2e/notes/05"
+  },
+  {
+   "name": "工业心理学 (Industrial Psychology)",
+   "explanation": "侧重于“硬”指标：分析工作要求（任务导向或人员导向/KSA），开发测试工具筛选候选人，设计入职与在职培训，以及建立绩效评估系统。",
+   "confusion": "容易与人力资源（HR）混淆。HR是执行部门，而工业心理学提供背后的科学依据和测量工具（如验证测试的有效性）。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "13",
+   "chapterTitle": "工业与组织心理学",
+   "href": "/kb/psychology-2e/notes/13"
+  },
+  {
+   "name": "工作记忆 (Working Memory)",
+   "explanation": "Baddeley模型提出的概念，指短期记忆的不同形式（如语音循环、视觉空间画板），用于临时处理和操作信息。",
+   "confusion": "常与“短期记忆”混用。严格来说，短期记忆是工作记忆的一个组成部分；工作记忆更强调对信息的主动操控和处理，而不仅是被动暂存。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "08",
+   "chapterTitle": "记忆",
+   "href": "/kb/psychology-2e/notes/08"
+  },
+  {
+   "name": "功能固定性",
+   "explanation": "一种认知障碍，指只看到物体的传统用途，无法将其用于其他目的。例如，只把盒子看作装钉子的容器，而想不到它可以作为烛台的底座。",
+   "confusion": "这与“思维定势”不同。思维定势是指用过去成功的方法解决新问题，而功能固定性特指对物体功能的僵化看法。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "07",
+   "chapterTitle": "思维与智力",
+   "href": "/kb/psychology-2e/notes/07"
+  },
+  {
+   "name": "观察性学习 (Observational Learning)",
+   "explanation": "通过观察他人的行为及其后果来进行学习，也称为建模。不需要直接体验强化或惩罚即可发生。",
+   "confusion": "不仅仅是简单的模仿。它包含认知过程（注意、记忆、动机），且学习者可能只提取规则而不复制具体动作。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "06",
+   "chapterTitle": "学习",
+   "href": "/kb/psychology-2e/notes/06"
+  },
+  {
+   "name": "规范方法 (Normative Approach)",
+   "explanation": "通过研究大量同龄儿童，确定大多数孩子达到特定里程碑（如走路、说话）的平均年龄，以此作为判断个体发展是否正常的基准。",
+   "confusion": "容易误认为这是绝对的“正常标准”或普遍真理。实际上，生物学里程碑较普遍，但社会性里程碑（如入学年龄）受文化影响巨大，且个体差异始终存在，平均值仅供参考。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "09",
+   "chapterTitle": "毕生发展",
+   "href": "/kb/psychology-2e/notes/09"
+  },
+  {
+   "name": "过度辩解效应 (Overjustification Effect)",
+   "explanation": "当原本出于兴趣做的行为开始获得外部奖励（如金钱）时，内在动机减弱，行为变得依赖奖励。一旦奖励消失，参与该行为的频率往往低于从未有奖励时。",
+   "confusion": "容易混淆为“奖励总是能激励人”。实际上，有形奖励（金钱）比无形奖励（赞美）更容易破坏内在动机；若奖励是意外且非预期的，这种负面影响较小。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "10",
+   "chapterTitle": "情绪与动机",
+   "href": "/kb/psychology-2e/notes/10"
+  },
+  {
+   "name": "好压力 (Eustress) vs. 坏压力 (Distress)",
+   "explanation": "适度压力可提升表现和幸福感（好压力）；过度或长期压力导致焦虑、表现下降和健康受损（坏压力）。两者界限在于压力水平是否超过个体的最佳唤醒点。",
+   "confusion": "容易认为所有压力都是有害的。材料指出，适度的挑战（如考试前的紧张）可以增强记忆力和动力。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "14",
+   "chapterTitle": "压力、生活方式和健康",
+   "href": "/kb/psychology-2e/notes/14"
+  },
+  {
+   "name": "合并症 (Comorbidity)",
+   "explanation": "指同一个人同时患有两种或多种心理障碍的情况。",
+   "confusion": "不是指一种病引起另一种病，而是共病现象。例如，41%的强迫症患者也符合重度抑郁症的诊断标准；药物滥用常与其他精神疾病高度共病。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "15",
+   "chapterTitle": "心理障碍",
+   "href": "/kb/psychology-2e/notes/15"
+  },
+  {
+   "name": "合并症 (Comorbidity)",
+   "explanation": "指一个人同时患有两种或以上的诊断，常见于物质滥用伴随抑郁症、焦虑症或人格障碍。",
+   "confusion": "不等于“并发症”。并发症通常由主病引起，而合并症是两个独立但共存的问题，需要同时治疗，否则单一治疗往往失败。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "16",
+   "chapterTitle": "治疗与疗法",
+   "href": "/kb/psychology-2e/notes/16"
+  },
+  {
+   "name": "互惠决定论 (Reciprocal Determinism)",
+   "explanation": "班杜拉的理论。认为行为、认知过程和环境三者相互影响。人不仅受环境影响，也能通过行为和思想改变环境。",
+   "confusion": "区别于斯金纳的极端行为主义（仅关注环境对行为的单向决定）。互惠决定论强调了人的主观能动性（认知）在人格形成中的作用。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "11",
+   "chapterTitle": "人格",
+   "href": "/kb/psychology-2e/notes/11"
+  },
+  {
+   "name": "霍桑效应 (Hawthorne Effect)",
+   "explanation": "指当人们意识到自己正在被观察或受到额外关注时，其行为表现会发生改变（通常是提高）。这提醒研究者必须控制“关注度”这一变量。",
+   "confusion": "常被误认为是某种特定的激励措施。实际上它是一种实验干扰现象，说明物理环境改变（如灯光变暗）本身未必导致效率变化，而是“被重视的感觉”导致了变化。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "13",
+   "chapterTitle": "工业与组织心理学",
+   "href": "/kb/psychology-2e/notes/13"
+  },
+  {
+   "name": "基本归因错误",
+   "explanation": "在解释他人行为时，过度强调内部性格因素，而低估情境力量的倾向。例如，看到某人发火，倾向于认为他脾气坏，而非他刚失业。",
+   "confusion": "容易与“演员-观察者偏见”混淆。后者特指对自己行为做情境归因，对他人行为做性格归因；前者仅针对对他人的解释偏差。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "12",
+   "chapterTitle": "社会心理学",
+   "href": "/kb/psychology-2e/notes/12"
+  },
+  {
+   "name": "基因型与表型",
+   "explanation": "基因型是个体内部不可见的DNA编码组合；表型是这些基因在环境中表达出的可观察特征（如身高、性格倾向）。",
+   "confusion": "容易混淆的是认为基因直接决定命运。实际上，基因提供的是“反应范围”，环境决定了你在该范围内落在哪个具体位置。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "03",
+   "chapterTitle": "生物心理学",
+   "href": "/kb/psychology-2e/notes/03"
+  },
+  {
+   "name": "集体潜意识与原型 (Collective Unconscious & Archetypes)",
+   "explanation": "荣格的概念。集体潜意识是全人类共有的心理底层，包含祖先记忆痕迹。原型是其中的普遍主题或符号（如英雄、母亲），体现在神话、艺术和梦中。",
+   "confusion": "原型不是具体的图像，而是产生这些图像的先天倾向或模式。材料指出，现代研究认为原型更多源于文化和语言经验，而非纯粹的生物学本能。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "11",
+   "chapterTitle": "人格",
+   "href": "/kb/psychology-2e/notes/11"
+  },
+  {
+   "name": "交感与副交感神经系统",
+   "explanation": "自主神经系统的两个分支。交感负责“战斗或逃跑”（应激状态）；副交感负责“休息与消化”（恢复平衡）。",
+   "confusion": "易认为二者是对立冲突的。实际上它们协同工作，共同维持身体的动态平衡（稳态）。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "03",
+   "chapterTitle": "生物心理学",
+   "href": "/kb/psychology-2e/notes/03"
+  },
+  {
+   "name": "经典条件作用 (Classical Conditioning)",
+   "explanation": "一种联想学习，生物学会将两个反复同时出现的事件（通常是中性刺激和无条件刺激）联系起来，从而让原本中性的刺激引发反射性反应。",
+   "confusion": "常与操作条件作用混淆。经典条件作用是被动的，关注的是“什么发生在前”（刺激预测事件）；操作条件作用是主动的，关注的是“什么发生在后”（行为产生后果）。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "06",
+   "chapterTitle": "学习",
+   "href": "/kb/psychology-2e/notes/06"
+  },
+  {
+   "name": "绝对阈值与差异阈值 (JND)",
+   "explanation": "绝对阈值是指在50%的情况下能检测到的最小刺激强度。差异阈值（刚刚可察觉的差异）是指能分辨出两个刺激之间不同所需的最小变化量。韦伯定律指出，差异阈值是原始刺激强度的恒定比例。",
+   "confusion": "不要将“潜意识信息”等同于“低于绝对阈值”。材料指出，低于生理阈值的信息虽被接收但无意识觉察，且对行为影响极小，不同于广告中常被夸大的“洗脑”效果。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "05",
+   "chapterTitle": "感觉与知觉",
+   "href": "/kb/psychology-2e/notes/05"
+  },
+  {
+   "name": "科学方法 (Scientific Method)",
+   "explanation": "通过提出假设、进行观察或实验来检验假设，并公开结果以供他人复制的过程。其核心是经验主义，即基于感官观察和数据。",
+   "confusion": "容易误以为科学能解决所有问题（如道德价值观）；实际上科学只处理物质和能量等可测量事物，无法直接证明价值观对错。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "01",
+   "chapterTitle": "心理学概论",
+   "href": "/kb/psychology-2e/notes/01"
+  },
+  {
+   "name": "科学方法 (Scientific Method)",
+   "explanation": "一种循环过程：从理论出发提出可检验的假设，通过实证观察收集数据，再根据结果修正理论或生成新假设。它依赖演绎推理（从一般到具体）和归纳推理（从具体观察到一般概括）。",
+   "confusion": "容易与“直觉”或“权威意见”混淆。科学方法强调证据的可重复性和客观性，而直觉是个人的主观判断；科学结论是暂时的、可被推翻的，而非绝对真理。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "02",
+   "chapterTitle": "心理学研究",
+   "href": "/kb/psychology-2e/notes/02"
+  },
+  {
+   "name": "可证伪性 (Falsifiability)",
+   "explanation": "一个科学假设必须在逻辑上存在被观测证据反驳的可能性。如果无法想象任何情况能证明它是错的，那它就不是科学假设。",
+   "confusion": "常被误认为是“已经被证明错误”。实际上，可证伪是指“有潜力被证明错误”，这是科学理论区别于伪科学的关键特征。弗洛伊德的某些概念因不可证伪而受到批评。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "02",
+   "chapterTitle": "心理学研究",
+   "href": "/kb/psychology-2e/notes/02"
+  },
+  {
+   "name": "刻板印象、偏见与歧视",
+   "explanation": "三者层层递进：刻板印象是认知层面的概括性信念（想法）；偏见是情感层面的消极态度（感受）；歧视是行为层面的负面行动（做法）。",
+   "confusion": "常混用这三个词。关键区别在于：刻板印象可以是中性或正面的信念，偏见必须是情感评价，歧视必须是实际行动。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "12",
+   "chapterTitle": "社会心理学",
+   "href": "/kb/psychology-2e/notes/12"
+  },
+  {
+   "name": "快速眼动睡眠 (REM Sleep)",
+   "explanation": "睡眠的一个阶段，特征是眼球在闭合眼皮下快速移动，脑电波类似清醒状态，肌肉处于瘫痪状态（除呼吸和心跳外）。这是做梦的主要时期，也与情绪处理和记忆整合有关。",
+   "confusion": "常误以为此时身体也在剧烈运动，实际上身体处于“肌张力缺失”状态，以防止梦中动作伤害自己。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "04",
+   "chapterTitle": "意识状态",
+   "href": "/kb/psychology-2e/notes/04"
+  },
+  {
+   "name": "慢波睡眠 (Slow-Wave Sleep / NREM Stage 3)",
+   "explanation": "深度睡眠阶段，脑电波频率极低（Delta波）、振幅极高。此阶段难以唤醒，生长激素在此阶段分泌旺盛，对体力恢复和某些类型的记忆巩固至关重要。",
+   "confusion": "容易与浅睡（NREM Stage 1/2）混淆。慢波睡眠是真正的“深睡”，如果在此阶段被打断，醒来后往往感到昏沉而非清爽。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "04",
+   "chapterTitle": "意识状态",
+   "href": "/kb/psychology-2e/notes/04"
+  },
+  {
+   "name": "盲点与填补",
+   "explanation": "视神经离开眼球处没有感光细胞，形成盲点。但我们通常意识不到，因为双眼视野重叠互补，且大脑会根据周围信息自动“填补”缺失部分。",
+   "confusion": "盲点不是视力模糊或近视，而是视野中完全缺失信息的区域，只是大脑通过算法隐藏了这一缺陷。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "05",
+   "chapterTitle": "感觉与知觉",
+   "href": "/kb/psychology-2e/notes/05"
+  },
+  {
+   "name": "内省 (Introspection)",
+   "explanation": "早期心理学家（如Wundt）使用的一种方法，指受试者对自己意识体验进行客观审视。",
+   "confusion": "容易与日常的“自我反思”混淆；在心理学史上，它是一种试图将思维分解为基本元素的研究手段，但因主观性强而逐渐被更客观的方法取代。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "01",
+   "chapterTitle": "心理学概论",
+   "href": "/kb/psychology-2e/notes/01"
+  },
+  {
+   "name": "旁观者效应",
+   "explanation": "在场人数越多，个体提供帮助的可能性越低的现象。主要机制是“责任分散”，即每个人都认为别人会帮忙，导致无人行动。",
+   "confusion": "不是冷漠或道德缺失。它是情境压力导致的决策瘫痪，即使善良的人也可能陷入其中。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "12",
+   "chapterTitle": "社会心理学",
+   "href": "/kb/psychology-2e/notes/12"
+  },
+  {
+   "name": "潜意识 (Unconscious)",
+   "explanation": "弗洛伊德理论中的概念，指个体不知道但影响行为和情感的心理内容存储库。",
+   "confusion": "容易误解为完全不可知的神秘力量；材料指出它是可以通过梦境、口误等方式间接探索的心理过程，且现代研究支持童年经历和动机冲突的作用。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "01",
+   "chapterTitle": "心理学概论",
+   "href": "/kb/psychology-2e/notes/01"
+  },
+  {
+   "name": "人格 (Personality)",
+   "explanation": "指推动个人持续以特定方式思考、感受和行为的长期特征和模式。它源自拉丁语“persona”（面具），最初用于代表角色特征，而非掩盖身份。人格被认为是稳定且不易改变的。",
+   "confusion": "容易与“情绪”或“态度”混淆。情绪是短暂的反应，而人格是跨时间、跨情境的稳定倾向。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "11",
+   "chapterTitle": "人格",
+   "href": "/kb/psychology-2e/notes/11"
+  },
+  {
+   "name": "人为因素心理学 (Human Factors Psychology)",
+   "explanation": "又称人体工程学。研究人与机器、工具、环境的交互界面。目标是优化工具设计以符合人类认知和生理限制，从而提高安全性、准确性和舒适度。",
+   "confusion": "容易与工业设计混淆。工业设计可能侧重美观或制造成本，人为因素心理学严格基于心理学原理（如注意力、反应时间）来确保可用性和安全。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "13",
+   "chapterTitle": "工业与组织心理学",
+   "href": "/kb/psychology-2e/notes/13"
+  },
+  {
+   "name": "认知革命 (Cognitive Revolution)",
+   "explanation": "20世纪50年代后兴起的视角，重新将注意力转回内部心理过程（如记忆、语言、思维），结合计算机科学和语言学成果。",
+   "confusion": "容易将其视为对行为主义的简单回归；实际上它引入了信息加工模型，使心理学能够以科学方式研究“黑箱”内部的处理机制。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "01",
+   "chapterTitle": "心理学概论",
+   "href": "/kb/psychology-2e/notes/01"
+  },
+  {
+   "name": "认知失调",
+   "explanation": "当个体的信念、态度或行为之间发生冲突，且威胁到积极的自我形象时，产生的心理不适感。为了消除这种不适，人们会改变行为、改变认知或增加新认知。",
+   "confusion": "不是普通的心理压力或焦虑。它特指由“不一致性”引发的动机状态，目的是恢复内心的一致性。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "12",
+   "chapterTitle": "社会心理学",
+   "href": "/kb/psychology-2e/notes/12"
+  },
+  {
+   "name": "三元智力理论",
+   "explanation": "斯滕伯格提出的智力模型，包含三部分：分析性智力（学术、逻辑推理）、创造性智力（发明、应对新情况）、实践性智力（街头智慧、适应环境）。",
+   "confusion": "不同于IQ测试主要测量的分析性智力，该理论强调后两者同样重要，且三者之间不一定正相关。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "07",
+   "chapterTitle": "思维与智力",
+   "href": "/kb/psychology-2e/notes/07"
+  },
+  {
+   "name": "闪光灯记忆 (Flashbulb Memory)",
+   "explanation": "对具有强烈情感冲击的重大历史事件的清晰、生动的记忆，通常包含得知消息时的地点和情境。",
+   "confusion": "常被误认为绝对准确。实际上，随着时间推移，细节会因重建和暗示而变得不准确，尽管主观确信度很高。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "08",
+   "chapterTitle": "记忆",
+   "href": "/kb/psychology-2e/notes/08"
+  },
+  {
+   "name": "设定点理论 (Set Point Theory)",
+   "explanation": "认为每个人都有一个由基因决定的理想体重范围，身体会通过调节代谢和食欲来抵抗大幅偏离这个范围的变化。",
+   "confusion": "常被误用为解释肥胖的唯一原因。材料指出该理论忽略了社会环境因素，且近期研究并未完全支持减肥后代谢率会显著补偿变化的预测。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "10",
+   "chapterTitle": "情绪与动机",
+   "href": "/kb/psychology-2e/notes/10"
+  },
+  {
+   "name": "神经递质与受体",
+   "explanation": "神经递质是跨越突触间隙的化学信使；受体是接收信号的蛋白质。二者通过“锁钥模型”特异性结合。",
+   "confusion": "常混淆激动剂与拮抗剂。激动剂模仿递质激活受体；拮抗剂占据受体但不激活，从而阻断正常信号。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "03",
+   "chapterTitle": "生物心理学",
+   "href": "/kb/psychology-2e/notes/03"
+  },
+  {
+   "name": "神经可塑性",
+   "explanation": "神经系统根据经验、发育或损伤改变结构和功能的能力，包括建立新突触或修剪旧连接。",
+   "confusion": "常误以为成年后大脑就定型了。虽然儿童期可塑性最强，但终身都存在显著的可塑性变化。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "03",
+   "chapterTitle": "生物心理学",
+   "href": "/kb/psychology-2e/notes/03"
+  },
+  {
+   "name": "实验法 (Experiment)",
+   "explanation": "唯一能确定因果关系的方法。研究者操纵自变量，控制无关变量，观察因变量的变化。核心要素包括随机分配、对照组设置和操作定义。",
+   "confusion": "容易与日常生活中的“尝试”混淆。科学实验要求严格的控制组对比和随机化，以排除偶然因素和预设立场的影响。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "02",
+   "chapterTitle": "心理学研究",
+   "href": "/kb/psychology-2e/notes/02"
+  },
+  {
+   "name": "睡眠债务 (Sleep Debt)",
+   "explanation": "长期睡眠不足累积形成的生理亏空。表现为一旦有机会睡觉就会更快入睡（睡眠反弹），并伴随警觉性下降、认知功能受损甚至类似抑郁的症状。",
+   "confusion": "不是指偶尔一晚没睡好，而是指长期无法获得充足睡眠导致的慢性状态。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "04",
+   "chapterTitle": "意识状态",
+   "href": "/kb/psychology-2e/notes/04"
+  },
+  {
+   "name": "素质-压力模型 (Diathesis-Stress Model)",
+   "explanation": "认为心理障碍的发展需要两个因素：潜在的脆弱性（素质，如基因或悲观思维习惯）和环境压力（如创伤、失业）。压力水平与素质水平成反比，即素质越高，所需触发疾病的压力越小。",
+   "confusion": "不是单一原因论。它反对仅由生物决定或仅由环境决定的观点，强调两者的交互作用。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "15",
+   "chapterTitle": "心理障碍",
+   "href": "/kb/psychology-2e/notes/15"
+  },
+  {
+   "name": "算法 vs. 启发式",
+   "explanation": "算法是分步的、保证正确结果的程序（如安装软件说明书、搜索引挚排序逻辑）。启发式是心理捷径或经验法则，能节省时间但不保证结果完美（如“向后工作”、“把大任务拆小”）。",
+   "confusion": "人们常误以为启发式总是低效的。其实面对海量信息或时间紧迫时，启发式是唯一可行的策略，尽管它容易引发偏差。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "07",
+   "chapterTitle": "思维与智力",
+   "href": "/kb/psychology-2e/notes/07"
+  },
+  {
+   "name": "同化与顺应 (Assimilation & Accommodation)",
+   "explanation": "皮亚杰提出的两个认知调整过程。同化是将新信息纳入已有的心理模型（图式）；顺应是当新信息与旧模型冲突时，修改或创建新的模型。",
+   "confusion": "容易混淆两者的方向。同化是“世界适应我”（用旧知识解释新事物），顺应是“我适应世界”（改变知识结构以接纳新事实）。例如，把猫叫狗是同化，学会区分猫狗是顺应。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "09",
+   "chapterTitle": "毕生发展",
+   "href": "/kb/psychology-2e/notes/09"
+  },
+  {
+   "name": "图式 (Schemata)",
+   "explanation": "大脑中存储相关概念的“文件柜”。它帮助我们要快速理解新情境，但也可能导致刻板印象。分为角色图式（对某类人的预期，如“消防员是勇敢的”）和事件图式/脚本（对常规行为的预期，如“进电梯要转身面对门”）。",
+   "confusion": "不要将图式等同于记忆。图式是一种组织信息的结构框架，它会主动填补空白并引导行为，甚至让我们难以察觉其中的错误假设。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "07",
+   "chapterTitle": "思维与智力",
+   "href": "/kb/psychology-2e/notes/07"
+  },
+  {
+   "name": "物体永久性 (Object Permanence)",
+   "explanation": "理解即使物体看不见、听不到或摸不到，它依然存在的概念。通常在感觉运动阶段后期形成。",
+   "confusion": "容易与“客体恒常性”的其他感知特性混淆。这里特指对“存在”的理解，而非大小或形状不变。缺乏此概念的婴儿会认为藏起来的玩具消失了。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "09",
+   "chapterTitle": "毕生发展",
+   "href": "/kb/psychology-2e/notes/09"
+  },
+  {
+   "name": "物质使用障碍中的耐受性与依赖",
+   "explanation": "耐受性是指需要增加剂量才能达到原有效果；身体依赖是指停药后出现戒断症状；心理依赖是指情感上对药物的渴求。三者共同构成成瘾的核心机制。",
+   "confusion": "耐受性不等于成瘾。一个人可能对咖啡因有耐受性但不具备强迫性用药的心理依赖；反之亦然。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "04",
+   "chapterTitle": "意识状态",
+   "href": "/kb/psychology-2e/notes/04"
+  },
+  {
+   "name": "习得性无助 (Learned Helplessness)",
+   "explanation": "个体在经历无法控制的负面事件后，即使后来有机会逃脱或改变现状，也放弃尝试的心理状态。常与抑郁相关。",
+   "confusion": "容易混淆为懒惰或缺乏动机。这是一种认知信念的改变，即相信自己的行为与结果之间没有因果关系。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "14",
+   "chapterTitle": "压力、生活方式和健康",
+   "href": "/kb/psychology-2e/notes/14"
+  },
+  {
+   "name": "显性记忆 vs. 隐性记忆",
+   "explanation": "显性记忆是有意识回忆的事实或事件（陈述性）；隐性记忆是无意识的技能或条件反射（程序性），如骑自行车。",
+   "confusion": "容易混淆情景记忆（个人经历）和语义记忆（通用知识），二者均属显性记忆。隐性记忆无法用语言直接描述，只能通过行为体现。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "08",
+   "chapterTitle": "记忆",
+   "href": "/kb/psychology-2e/notes/08"
+  },
+  {
+   "name": "显性与隐性等位基因",
+   "explanation": "显性等位基因只要存在一个拷贝就能表现出性状；隐性等位基因必须两个拷贝同时存在才能表现。",
+   "confusion": "常误以为“显性”就是“好”或“常见”，“隐性”就是“坏”或“罕见”。这只是遗传表达方式，与健康或频率无必然联系。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "03",
+   "chapterTitle": "生物心理学",
+   "href": "/kb/psychology-2e/notes/03"
+  },
+  {
+   "name": "相关性 (Correlation)",
+   "explanation": "两个变量之间存在统计上的关联，即一个变量变化时另一个变量也倾向于变化。用相关系数 r (-1 到 +1) 表示强度和方向。",
+   "confusion": "极易与“因果关系”混淆。相关性只说明两者有关联，不能证明 A 导致 B。例如，冰淇淋销量与犯罪率正相关，但并非吃冰淇淋导致犯罪，而是气温升高同时导致了这两者。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "02",
+   "chapterTitle": "心理学研究",
+   "href": "/kb/psychology-2e/notes/02"
+  },
+  {
+   "name": "心理学 (Psychology)",
+   "explanation": "对思想（内部过程）和行为（外部表现）的科学研究。它既是一门自然科学（涉及生物学基础），也是一门社会科学（涉及人际互动）。",
+   "confusion": "容易混淆为“心灵鸡汤”或纯粹的哲学思辨；实际上它依赖可测量的数据和实验验证，而非仅靠逻辑论证或权威观点。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "01",
+   "chapterTitle": "心理学概论",
+   "href": "/kb/psychology-2e/notes/01"
+  },
+  {
+   "name": "心理障碍 (Psychological Disorder)",
+   "explanation": "一种综合征，特征是认知、情绪调节或行为出现临床严重障碍，反映了心理、生物或发育过程的功能障碍，并导致社交、职业或其他重要活动中的严重困扰或残疾。",
+   "confusion": "容易与“非典型行为”混淆。红头发是非典型的但不是障碍；违反文化规范（如日本人不回应陌生人微笑）也不一定是障碍。只有当功能障碍造成个人痛苦或社会功能受损时，才构成障碍。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "15",
+   "chapterTitle": "心理障碍",
+   "href": "/kb/psychology-2e/notes/15"
+  },
+  {
+   "name": "行为主义 (Behaviorism)",
+   "explanation": "主张心理学应只研究可观察的行为，反对研究不可观察的意识。强调环境刺激对行为的塑造作用。",
+   "confusion": "容易认为行为主义否认思想的存在；实际上它认为思想难以客观测量，因此选择忽略内在过程，专注于外部行为及其后果（强化/惩罚）。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "01",
+   "chapterTitle": "心理学概论",
+   "href": "/kb/psychology-2e/notes/01"
+  },
+  {
+   "name": "性别认同 vs. 性取向",
+   "explanation": "性别认同是你内心感觉自己是男性、女性或其他性别；性取向是被谁吸引（同性、异性或两者）。",
+   "confusion": "常因刻板印象被混为一谈。例如，跨性别者可能是异性恋、同性恋或双性恋；穿异性服装（变装）通常是一种表达，不代表性别认同改变或性取向变化。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "10",
+   "chapterTitle": "情绪与动机",
+   "href": "/kb/psychology-2e/notes/10"
+  },
+  {
+   "name": "学习 (Learning)",
+   "explanation": "由经验引起的行为或知识的相对永久性变化。它不同于本能和反射，后者是天生的、未学习的。",
+   "confusion": "容易与“记忆”混淆。学习强调行为的改变过程，而记忆侧重于信息的存储。此外，不要将暂时的状态改变（如因疲劳导致的反应变慢）视为学习。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "06",
+   "chapterTitle": "学习",
+   "href": "/kb/psychology-2e/notes/06"
+  },
+  {
+   "name": "压力 (Stress)",
+   "explanation": "个体感知并评估环境要求超过自身资源，从而感到被压倒或受威胁的过程。它不仅是外部事件，更是内部的心理评估结果。",
+   "confusion": "容易混淆为单纯的“不愉快感觉”或“外部灾难”。实际上，同样的事件对不同人产生的压力不同，取决于个人的初级评估（是否有害）和次级评估（能否应对）。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "14",
+   "chapterTitle": "压力、生活方式和健康",
+   "href": "/kb/psychology-2e/notes/14"
+  },
+  {
+   "name": "一般适应综合征 (GAS)",
+   "explanation": "汉斯·塞利提出的身体对长期压力的三阶段非特异性生理反应模式：警报反应（立即唤醒）、抵抗阶段（适应但消耗资源）、精疲力竭阶段（资源耗尽，易患病）。",
+   "confusion": "容易混淆为“战斗或逃跑反应”。后者仅对应GAS的第一阶段（警报），而GAS描述的是从急性到慢性压力的完整生理演变过程。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "14",
+   "chapterTitle": "压力、生活方式和健康",
+   "href": "/kb/psychology-2e/notes/14"
+  },
+  {
+   "name": "以问题为中心的应对 vs. 以情绪为中心的应对",
+   "explanation": "前者旨在改变或消除压力源本身（如制定计划、寻求帮助）；后者旨在调节由压力引发的负面情绪（如回避、重新评估、放松）。",
+   "confusion": "容易认为前者永远优于后者。实际上，当压力源不可控时（如绝症诊断），以情绪为中心的应对更有效；当压力源可控时，以问题为中心更有效。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "14",
+   "chapterTitle": "压力、生活方式和健康",
+   "href": "/kb/psychology-2e/notes/14"
+  },
+  {
+   "name": "有害功能障碍 (Harmful Dysfunction)",
+   "explanation": "由Wakefield提出的概念，指内部进化形成的心理机制无法发挥正常功能，且这种失效根据文化标准对个人或他人造成了负面影响。",
+   "confusion": "不仅仅是“感觉不好”。例如，害怕蜘蛛若导致失业和极度回避，即为有害功能障碍；若仅是轻微不适但不影响生活，则可能不属于此范畴。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "15",
+   "chapterTitle": "心理障碍",
+   "href": "/kb/psychology-2e/notes/15"
+  },
+  {
+   "name": "詹姆斯-兰格理论 vs. 坎农-巴德理论",
+   "explanation": "前者认为先有生理反应（心跳加速），后有情绪体验（恐惧）；后者认为生理反应和情绪体验是同时发生且独立的。",
+   "confusion": "容易混淆两者的因果顺序。沙赫特-辛格的双因素理论则介于两者之间，强调生理唤醒加上“认知标签”才形成情绪。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "10",
+   "chapterTitle": "情绪与动机",
+   "href": "/kb/psychology-2e/notes/10"
+  },
+  {
+   "name": "致畸剂 (Teratogens)",
+   "explanation": "任何能对发育中的胚胎或胎儿造成损害的生物、化学或物理环境因素，如酒精、烟草、某些药物、辐射或病毒。",
+   "confusion": "容易误以为只有非法毒品才是致畸剂。实际上，处方药、非处方药、甚至母亲的情绪压力或营养状况都可能产生类似影响，且危害程度取决于接触时间和剂量。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "09",
+   "chapterTitle": "毕生发展",
+   "href": "/kb/psychology-2e/notes/09"
+  },
+  {
+   "name": "昼夜节律 (Circadian Rhythm)",
+   "explanation": "一种大约以24小时为周期的内部生物节奏，控制体温、激素分泌和睡眠-觉醒周期。其核心时钟位于下丘脑的视交叉上核（SCN），主要受视网膜接收的光线信息调节。",
+   "confusion": "容易与“生物节律”混淆。生物节律是更广泛的概念（如月经周期约28天），昼夜节律特指约24小时的周期。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "04",
+   "chapterTitle": "意识状态",
+   "href": "/kb/psychology-2e/notes/04"
+  },
+  {
+   "name": "自然概念 vs. 人工概念",
+   "explanation": "自然概念是通过直接体验或间接观察（如看电影、听描述）形成的，边界模糊且依赖经验（例如“雪”、“狗”）。人工概念则由一组严格定义的特定特征构成，通常用于数学或科学领域（例如“三角形”必须有三条边三个角，“正方形面积”公式）。",
+   "confusion": "容易混淆的是认为所有概念都有明确界限。实际上，自然概念往往有原型（最佳例子），而人工概念则是通过规则定义的。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "07",
+   "chapterTitle": "思维与智力",
+   "href": "/kb/psychology-2e/notes/07"
+  },
+  {
+   "name": "自我效能感 (Self-efficacy)",
+   "explanation": "个体对自己能否成功完成特定任务的信念。它不取决于实际能力，而取决于对能力的感知。高自我效能感让人更愿意挑战困难任务并在挫折中坚持。",
+   "confusion": "不要与“自尊”混淆。自尊是对整体价值的感受，自我效能感是针对具体任务能力的信心。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "10",
+   "chapterTitle": "情绪与动机",
+   "href": "/kb/psychology-2e/notes/10"
+  },
+  {
+   "name": "自下而上 vs. 自上而下处理",
+   "explanation": "自下而上处理由环境中的感官输入驱动（如突然的巨响吸引注意）。自上而下处理由知识、期望和目标驱动（如在嘈杂餐厅寻找特定颜色的钥匙）。",
+   "confusion": "二者常同时发生。例如，玻璃破碎声是自下而上的干扰，但你决定忽略它继续聊天则是自上而下的控制。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "05",
+   "chapterTitle": "感觉与知觉",
+   "href": "/kb/psychology-2e/notes/05"
+  },
+  {
+   "name": "自愿与非自愿治疗",
+   "explanation": "自愿治疗是患者主动寻求帮助以缓解症状；非自愿治疗是由法院、假释条件或危机干预强制要求的，患者未选择接受治疗。",
+   "confusion": "不要认为只有严重精神分裂症患者才需非自愿治疗。任何对自己或他人构成迫在眉睫威胁的情况，或司法转介（如家暴 anger management），都可能触发非自愿程序。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "16",
+   "chapterTitle": "治疗与疗法",
+   "href": "/kb/psychology-2e/notes/16"
+  },
+  {
+   "name": "组织心理学 (Organizational Psychology)",
+   "explanation": "侧重于“软”环境：研究员工间的互动、领导风格、组织文化、工作满意度以及工作与家庭的平衡。它关注社会和心理因素如何影响生产力。",
+   "confusion": "容易与管理学混淆。管理学侧重战略和流程，组织心理学侧重个体和群体的心理机制（如动机、感知、冲突）。",
+   "bookId": "psychology-2e",
+   "bookTitle": "心理学入门 2e",
+   "chapter": "13",
+   "chapterTitle": "工业与组织心理学",
+   "href": "/kb/psychology-2e/notes/13"
+  }
+ ]
+}
